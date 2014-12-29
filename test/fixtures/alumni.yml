@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  box: MyString
+  lname: MyString
+  fname: MyString
+  class: MyString
+  graduate: MyString
+  photos: MyString
+  oversize: MyString
+
+two:
+  box: MyString
+  lname: MyString
+  fname: MyString
+  class: MyString
+  graduate: MyString
+  photos: MyString
+  oversize: MyString
