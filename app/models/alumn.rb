@@ -2,10 +2,12 @@ class Alumn < ActiveRecord::Base
 
 	def self.search(params)
 	  q = Array.new
-	  vals = Array.new
+	  cols = [ "box","lname","fname","year","graduate","photos","oversize" ] 
 
 	  params.except(:action, :controller).each do |k, v|
-	  	q << "#{k} LIKE '%#{v}%'"
+	  	if cols.include? k.downcase
+	  		q << "#{k} LIKE '%#{v}%'"
+	  	end
 	  end
 
   	  find(:all, :conditions => q.join(" AND "))
