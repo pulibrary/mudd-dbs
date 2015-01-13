@@ -4,7 +4,11 @@ class AlumniController < ApplicationController
   # GET /alumni
   # GET /alumni.json
   def index
-    @alumni = Alumn.all
+    if params
+      @alumni = Alumn.search(params)
+    else
+      @alumni = Alumn.all
+    end
   end
 
   # GET /alumni/1
