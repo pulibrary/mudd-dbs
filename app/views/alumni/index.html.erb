@@ -26,9 +26,11 @@
         <td><%= alumn.graduate %></td>
         <td><%= alumn.photos %></td>
         <td><%= alumn.oversize %></td>
+        <% if user_signed_in? %>
         <td><%= link_to 'Show', alumn %></td>
         <td><%= link_to 'Edit', edit_alumn_path(alumn) %></td>
         <td><%= link_to 'Destroy', alumn, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +38,6 @@
 
 <br>
 
+<% if user_signed_in? %>
 <%= link_to 'New Alumn', new_alumn_path %>
+<% end %>
