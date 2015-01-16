@@ -13,7 +13,7 @@ def delete_alumni
 end
 
 def load_alumni
-  FastSeeder.seed_csv!(Alumn, "ALUMNI.csv", :box, :fname, :lname, :year, :graduate, :photos, :oversize)
+  FastSeeder.seed_csv!(Alumn, "ALUMNI.csv", :box, :lname, :fname, :year, :graduate, :photos, :oversize)
 end
 
 def reset_alumni

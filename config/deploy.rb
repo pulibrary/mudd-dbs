@@ -45,6 +45,10 @@ namespace :deploy do
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
+      desc "reload the database with data"
+	  task :seed do
+	    run "cd #{current_path} && bundle exec rake db:seed RAILS_ENV=#{rails_env}"
+	  end
     end
   end
 
