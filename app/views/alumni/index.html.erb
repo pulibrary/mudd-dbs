@@ -1,6 +1,5 @@
-<h1>Listing alumni</h1>
-
-<table>
+<center><h1>Princeton Undergraduate Alumni Index, 1748-1920</h1></center>
+<table border=1 align="center">
   <thead>
     <tr>
       <th>Box</th>
@@ -10,9 +9,11 @@
       <th>Graduate</th>
       <th>Photos</th>
       <th>Oversize</th>
+      <% if user_signed_in? %>
       <th></th>
       <th></th>
       <th></th>
+      <% end %>
     </tr>
   </thead>
 
@@ -35,9 +36,14 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
-
 <% if user_signed_in? %>
 <%= link_to 'New Alumn', new_alumn_path %>
 <% end %>
+
+<div style="width:100%; text-align:center;">
+<br>
+<%= link_to 'New Search', "http://rbsc-dev.princeton.edu/databases/undergraduate-alumni-index-1748-1920" %>
+<br>
+<%= link_to 'Return to the Mudd Library website', "http://rbscbeta.princeton.edu/locations/seeley-g-mudd-library" %>
+</div>
