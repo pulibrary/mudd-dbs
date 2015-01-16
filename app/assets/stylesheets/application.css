@@ -11,3 +11,7 @@
  *= require_self
  *= require_tree .
  */
+
+.datatable td {
+	padding:5px;
+}
