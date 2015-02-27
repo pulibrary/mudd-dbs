@@ -10,7 +10,7 @@ class Alumn < ActiveRecord::Base
 	  	end
 	  end
 
-  	  find(:all, :conditions => q.join(" AND "))
+  	  where(q.join(" AND "))
  
 	end
 
