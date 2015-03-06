@@ -1,9 +1,10 @@
-class Alumn < ActiveRecord::Base
-	# represents alumns from 1748-1920... perhaps combine with new_alumn someday
-	
+class NewAlumn < ActiveRecord::Base
+	#represents Alumni from 1921 to last load
+	include Globals
+
 	def self.search(params)
 	  q = Array.new
-	  cols = [ "box","lname","fname","year","graduate","photos","oversize" ] 
+	  cols = [ "lname","fname","year","pubfile","academicfile" ] 
 
 	  params.except(:action, :controller).each do |k, v|
 	  	if cols.include? k.downcase

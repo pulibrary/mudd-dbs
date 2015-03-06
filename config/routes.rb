@@ -1,12 +1,17 @@
 Alumni::Application.routes.draw do
+
+  resources :archboards
+
   devise_for :users
   root to: "alumni#index"
   #resources :alumni
 
   authenticate :user do
     resources :alumni, only: [:show, :new, :create, :edit, :update, :destroy]
+    resources :new_alumni, only: [:show, :new, :create, :edit, :update, :destroy]
   end
   resources :alumni, only: [:index]
+  resources :new_alumni, only: [:index]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

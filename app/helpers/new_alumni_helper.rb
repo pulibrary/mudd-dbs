@@ -1,0 +1,2 @@
+module NewAlumniHelper
+end

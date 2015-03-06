@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Archboards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Numbers assigned</th>
+      <th>Original assigned</th>
+      <th>Building info sheet</th>
+      <th>Drawing title</th>
+      <th>Drawing number</th>
+      <th>Project type</th>
+      <th>Drawing type</th>
+      <th>Board date</th>
+      <th>Board dimensions</th>
+      <th>Color</th>
+      <th>Drawing view</th>
+      <th>Elevation</th>
+      <th>Comments</th>
+      <th>Contractor1 type</th>
+      <th>Contractor1 name</th>
+      <th>Contractor2 type</th>
+      <th>Contractor2 name</th>
+      <th>Contractor3 type</th>
+      <th>Contractor3 name</th>
+      <th>Proposal</th>
+      <th>Not constructed</th>
+      <th>Bw fiche</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @archboards.each do |archboard| %>
+      <tr>
+        <td><%= archboard.numbers_assigned %></td>
+        <td><%= archboard.original_assigned %></td>
+        <td><%= archboard.building_info_sheet %></td>
+        <td><%= archboard.drawing_title %></td>
+        <td><%= archboard.drawing_number %></td>
+        <td><%= archboard.project_type %></td>
+        <td><%= archboard.drawing_type %></td>
+        <td><%= archboard.board_date %></td>
+        <td><%= archboard.board_dimensions %></td>
+        <td><%= archboard.color %></td>
+        <td><%= archboard.drawing_view %></td>
+        <td><%= archboard.elevation %></td>
+        <td><%= archboard.comments %></td>
+        <td><%= archboard.contractor1_type %></td>
+        <td><%= archboard.contractor1_name %></td>
+        <td><%= archboard.contractor2_type %></td>
+        <td><%= archboard.contractor2_name %></td>
+        <td><%= archboard.contractor3_type %></td>
+        <td><%= archboard.contractor3_name %></td>
+        <td><%= archboard.proposal %></td>
+        <td><%= archboard.not_constructed %></td>
+        <td><%= archboard.bw_fiche %></td>
+        <td><%= link_to 'Show', archboard %></td>
+        <td><%= link_to 'Edit', edit_archboard_path(archboard) %></td>
+        <td><%= link_to 'Destroy', archboard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Archboard', new_archboard_path %>
