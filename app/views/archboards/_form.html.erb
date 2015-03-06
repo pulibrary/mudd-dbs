@@ -1,0 +1,105 @@
+<%= form_for(@archboard) do |f| %>
+  <% if @archboard.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@archboard.errors.count, "error") %> prohibited this archboard from being saved:</h2>
+
+      <ul>
+      <% @archboard.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :numbers_assigned %><br>
+    <%= f.text_field :numbers_assigned %>
+  </div>
+  <div class="field">
+    <%= f.label :original_assigned %><br>
+    <%= f.number_field :original_assigned %>
+  </div>
+  <div class="field">
+    <%= f.label :building_info_sheet %><br>
+    <%= f.text_field :building_info_sheet %>
+  </div>
+  <div class="field">
+    <%= f.label :drawing_title %><br>
+    <%= f.text_field :drawing_title %>
+  </div>
+  <div class="field">
+    <%= f.label :drawing_number %><br>
+    <%= f.text_field :drawing_number %>
+  </div>
+  <div class="field">
+    <%= f.label :project_type %><br>
+    <%= f.text_field :project_type %>
+  </div>
+  <div class="field">
+    <%= f.label :drawing_type %><br>
+    <%= f.text_field :drawing_type %>
+  </div>
+  <div class="field">
+    <%= f.label :board_date %><br>
+    <%= f.text_field :board_date %>
+  </div>
+  <div class="field">
+    <%= f.label :board_dimensions %><br>
+    <%= f.text_field :board_dimensions %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :drawing_view %><br>
+    <%= f.text_field :drawing_view %>
+  </div>
+  <div class="field">
+    <%= f.label :elevation %><br>
+    <%= f.text_field :elevation %>
+  </div>
+  <div class="field">
+    <%= f.label :comments %><br>
+    <%= f.text_field :comments %>
+  </div>
+  <div class="field">
+    <%= f.label :contractor1_type %><br>
+    <%= f.text_field :contractor1_type %>
+  </div>
+  <div class="field">
+    <%= f.label :contractor1_name %><br>
+    <%= f.text_field :contractor1_name %>
+  </div>
+  <div class="field">
+    <%= f.label :contractor2_type %><br>
+    <%= f.text_field :contractor2_type %>
+  </div>
+  <div class="field">
+    <%= f.label :contractor2_name %><br>
+    <%= f.text_field :contractor2_name %>
+  </div>
+  <div class="field">
+    <%= f.label :contractor3_type %><br>
+    <%= f.text_field :contractor3_type %>
+  </div>
+  <div class="field">
+    <%= f.label :contractor3_name %><br>
+    <%= f.text_field :contractor3_name %>
+  </div>
+  <div class="field">
+    <%= f.label :proposal %><br>
+    <%= f.number_field :proposal %>
+  </div>
+  <div class="field">
+    <%= f.label :not_constructed %><br>
+    <%= f.number_field :not_constructed %>
+  </div>
+  <div class="field">
+    <%= f.label :bw_fiche %><br>
+    <%= f.number_field :bw_fiche %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

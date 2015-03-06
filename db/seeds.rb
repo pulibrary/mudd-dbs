@@ -21,4 +21,33 @@ def reset_alumni
   load_alumni
 end
 
-reset_alumni
+def delete_newalumni
+  NewAlumn.delete_all
+end
+
+def load_newalumni
+  FastSeeder.seed_csv!(NewAlumn, "Alumni2.csv", :lname, :fname, :year, :pubfile, :academicfile)
+end
+
+def reset_newalumni
+  delete_newalumni
+  load_newalumni
+end
+
+def delete_archboards
+  Archboard.delete_all
+end
+
+def load_archboards
+  FastSeeder.seed_csv!(Archboard, "Archboards.csv", :numbers_assigned, :original_assigned, :building_info_sheet, :drawing_title, :drawing_number, :project_type, :drawing_type, :board_date, :board_dimensions, :color, :drawing_view, :elevation, :comments, :contractor1_type, :contractor1_name, :contractor2_type, :contractor2_name, :contractor3_type, :contractor3_name, :proposal, :not_constructed, :bw_fiche)
+end
+
+def reset_archboards
+  delete_archboards
+  load_archboards
+end
+
+
+#reset_alumni
+#reset_newalumni
+reset_archboards

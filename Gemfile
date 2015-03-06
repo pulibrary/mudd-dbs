@@ -36,6 +36,9 @@ end
 
 gem 'devise'
 
+# avoid utf8 issues with csv imports
+#gem 'rack-utf8_sanitizer'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,0 +1,44 @@
+<center><h1>Princeton Undergraduate Alumni Index, 1921-2005</h1></center>
+<table border=1 align="center" class="datatable">
+  <thead>
+    <tr>
+      <th>Last Name</th>
+      <th>First Name</th>
+      <th>Class</th>
+      <th>Public File</th>
+      <th>Academic File</th>
+      <% if user_signed_in? %>
+      <th colspan="3"></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @new_alumni.each do |new_alumn| %>
+      <tr>
+        <td><%= new_alumn.lname %></td>
+        <td><%= new_alumn.fname %></td>
+        <td><%= new_alumn.year %></td>
+        <td><%= new_alumn.pubfile %></td>
+        <td><%= new_alumn.academicfile %></td>
+        <% if user_signed_in? %>
+        <td><%= link_to 'Show', new_alumn %></td>
+        <td><%= link_to 'Edit', edit_new_alumn_path(new_alumn) %></td>
+        <td><%= link_to 'Destroy', new_alumn, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if user_signed_in? %>
+<%= link_to 'New New alumn', new_new_alumn_path %>
+<% end %>
+
+<div style="width:100%; text-align:center;">
+<br>
+<%= link_to 'New Search', rbsc_site + "/databases/undergraduate-alumni-index-1921-2005" %>
+<br>
+<%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path %>
+</div>

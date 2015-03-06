@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numbers_assigned: 9.99
+  original_assigned: 1
+  building_info_sheet: MyString
+  drawing_title: MyString
+  drawing_number: MyString
+  project_type: MyString
+  drawing_type: MyString
+  board_date: MyString
+  board_dimensions: MyString
+  color: MyString
+  drawing_view: MyString
+  elevation: MyString
+  comments: MyString
+  contractor1_type: MyString
+  contractor1_name: MyString
+  contractor2_type: MyString
+  contractor2_name: MyString
+  contractor3_type: MyString
+  contractor3_name: MyString
+  proposal: 1
+  not_constructed: 1
+  bw_fiche: 1
+
+two:
+  numbers_assigned: 9.99
+  original_assigned: 1
+  building_info_sheet: MyString
+  drawing_title: MyString
+  drawing_number: MyString
+  project_type: MyString
+  drawing_type: MyString
+  board_date: MyString
+  board_dimensions: MyString
+  color: MyString
+  drawing_view: MyString
+  elevation: MyString
+  comments: MyString
+  contractor1_type: MyString
+  contractor1_name: MyString
+  contractor2_type: MyString
+  contractor2_name: MyString
+  contractor3_type: MyString
+  contractor3_name: MyString
+  proposal: 1
+  not_constructed: 1
+  bw_fiche: 1
