@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150303203354) do
+ActiveRecord::Schema.define(version: 20150309203449) do
 
   create_table "alumni", force: :cascade do |t|
     t.string   "box",        limit: 255
@@ -50,6 +50,24 @@ ActiveRecord::Schema.define(version: 20150303203354) do
     t.integer  "bw_fiche",            limit: 4
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
+  end
+
+  create_table "audio_visuals", force: :cascade do |t|
+    t.string   "item",       limit: 255
+    t.string   "box",        limit: 255
+    t.string   "topic",      limit: 255
+    t.string   "title",      limit: 255
+    t.string   "creator",    limit: 255
+    t.string   "year",       limit: 255
+    t.string   "format",     limit: 255
+    t.string   "color",      limit: 255
+    t.string   "duration",   limit: 255
+    t.string   "copied",     limit: 255
+    t.string   "notes",      limit: 255
+    t.string   "id3",        limit: 255
+    t.string   "index",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "new_alumni", force: :cascade do |t|

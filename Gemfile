@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem "fast_seeder"
 
+gem "smarter_csv"
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

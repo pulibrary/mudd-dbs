@@ -1,5 +1,7 @@
 Alumni::Application.routes.draw do
 
+  resources :audio_visuals
+
   resources :archboards
 
   devise_for :users

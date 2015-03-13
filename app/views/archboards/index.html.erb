@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Archboards</h1>
+<h1>Architectural Presentation Boards</h1>
 
-<table>
+<table border=1 align="center" class="datatable">
   <thead>
     <tr>
       <th>Numbers assigned</th>
@@ -27,7 +27,9 @@
       <th>Proposal</th>
       <th>Not constructed</th>
       <th>Bw fiche</th>
+      <% if user_signed_in? %>
       <th colspan="3"></th>
+      <% end %>
     </tr>
   </thead>
 
@@ -56,14 +58,24 @@
         <td><%= archboard.proposal %></td>
         <td><%= archboard.not_constructed %></td>
         <td><%= archboard.bw_fiche %></td>
+        <% if user_signed_in? %>
         <td><%= link_to 'Show', archboard %></td>
         <td><%= link_to 'Edit', edit_archboard_path(archboard) %></td>
         <td><%= link_to 'Destroy', archboard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if user_signed_in? %>
 <%= link_to 'New Archboard', new_archboard_path %>
+<% end %>
+
+<div style="width:100%; text-align:center;">
+<br>
+<%= link_to 'New Search', rbsc_site + "/databases/architectural-presentation-boards" %>
+<br>
+<%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path %>
+</div>

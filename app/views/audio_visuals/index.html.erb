@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Princeton University Historical Audio-Visual Collection</h1>
+
+<table border=1 align="center" class="datatable">
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Box</th>
+      <th>Topic</th>
+      <th>Title</th>
+      <th>Creator</th>
+      <th>Date</th>
+      <th>Format</th>
+      <th>B/W or Color?</th>
+      <th>Duration</th>
+      <th>Notes</th>
+      <th>Dub Copy?</th>
+      <% if user_signed_in? %>
+      <th colspan="3"></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @audio_visuals.each do |audio_visual| %>
+      <tr>
+        <td><%= audio_visual.item %></td>
+        <td><%= audio_visual.box %></td>
+        <td><%= audio_visual.topic %></td>
+        <td><%= audio_visual.title %></td>
+        <td><%= audio_visual.creator %></td>
+        <td><%= audio_visual.year %></td>
+        <td><%= audio_visual.format %></td>
+        <td><%= audio_visual.color %></td>
+        <td><%= audio_visual.duration %></td>
+        <td><%= audio_visual.notes %></td>
+        <td><%= audio_visual.copied %></td>
+        <% if user_signed_in? %>
+        <td><%= link_to 'Show', audio_visual %></td>
+        <td><%= link_to 'Edit', edit_audio_visual_path(audio_visual) %></td>
+        <td><%= link_to 'Destroy', audio_visual, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if user_signed_in? %>
+<%= link_to 'New Audio visual', new_audio_visual_path %>
+<% end %>
+
+<div style="width:100%; text-align:center;">
+<br>
+<%= link_to 'New Search', rbsc_site + "/databases/princeton-university-historical-audio-visual-collection" %>
+<br>
+<%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path %>
+</div>

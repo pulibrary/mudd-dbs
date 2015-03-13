@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @audio_visual.item %>
+</p>
+
+<p>
+  <strong>Box:</strong>
+  <%= @audio_visual.box %>
+</p>
+
+<p>
+  <strong>Topic:</strong>
+  <%= @audio_visual.topic %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @audio_visual.title %>
+</p>
+
+<p>
+  <strong>Creator:</strong>
+  <%= @audio_visual.creator %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @audio_visual.year %>
+</p>
+
+<p>
+  <strong>Format:</strong>
+  <%= @audio_visual.format %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @audio_visual.color %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @audio_visual.duration %>
+</p>
+
+<p>
+  <strong>Copied:</strong>
+  <%= @audio_visual.copied %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @audio_visual.notes %>
+</p>
+
+<p>
+  <strong>Id3:</strong>
+  <%= @audio_visual.id3 %>
+</p>
+
+<p>
+  <strong>Index:</strong>
+  <%= @audio_visual.index %>
+</p>
+
+<%= link_to 'Edit', edit_audio_visual_path(@audio_visual) %> |
+<%= link_to 'Back', audio_visuals_path %>

@@ -141,6 +141,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    smarter_csv (1.0.19)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -187,6 +188,7 @@ DEPENDENCIES
   rails (= 4.2.0)
   sass-rails (~> 4.0.2)
   sdoc
+  smarter_csv
   therubyracer
   turbolinks
   uglifier (>= 1.3.0)

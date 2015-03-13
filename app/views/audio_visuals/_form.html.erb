@@ -1,0 +1,69 @@
+<%= form_for(@audio_visual) do |f| %>
+  <% if @audio_visual.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@audio_visual.errors.count, "error") %> prohibited this audio_visual from being saved:</h2>
+
+      <ul>
+      <% @audio_visual.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :item %><br>
+    <%= f.text_field :item %>
+  </div>
+  <div class="field">
+    <%= f.label :box %><br>
+    <%= f.text_field :box %>
+  </div>
+  <div class="field">
+    <%= f.label :topic %><br>
+    <%= f.text_field :topic %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :creator %><br>
+    <%= f.text_field :creator %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br>
+    <%= f.text_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :format %><br>
+    <%= f.text_field :format %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :duration %><br>
+    <%= f.text_field :duration %>
+  </div>
+  <div class="field">
+    <%= f.label :copied %><br>
+    <%= f.text_field :copied %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_field :notes %>
+  </div>
+  <div class="field">
+    <%= f.label :id3 %><br>
+    <%= f.text_field :id3 %>
+  </div>
+  <div class="field">
+    <%= f.label :index %><br>
+    <%= f.text_field :index %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

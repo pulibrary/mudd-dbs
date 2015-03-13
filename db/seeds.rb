@@ -47,7 +47,26 @@ def reset_archboards
   load_archboards
 end
 
+def delete_audiovisuals
+  Archboard.delete_all
+end
+
+def load_audiovisuals
+
+  parsed_file = SmarterCSV.process("db/seeds/AudioVisuals.csv", {:col_sep => "|", :force_simple_split => "true"}) 
+
+  parsed_file.each do |value|
+    AudioVisual.create(value)
+  end
+
+end
+
+def reset_audiovisuals
+  delete_audiovisuals
+  load_audiovisuals
+end
 
 #reset_alumni
 #reset_newalumni
-reset_archboards
+#reset_archboards
+reset_audiovisuals
