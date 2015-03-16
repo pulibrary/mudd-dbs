@@ -1,0 +1,51 @@
+<center><h1>Princeton University Graduate Alumni Index, 1839-1998</h1></center>
+
+<table border=1 align="center" class="datatable">
+  <thead>
+    <tr>
+      <th>Box</th>
+      <th>Lastname</th>
+      <th>Firstname</th>
+      <th>Year</th>
+      <th>Department</th>
+      <th>Deathdate</th>
+      <th>Photos</th>
+      <th>Oversize</th>
+      <% if user_signed_in? %>
+      <th colspan="3"></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @graduates.each do |graduate| %>
+      <tr>
+        <td><%= graduate.box %></td>
+        <td><%= graduate.lastname %></td>
+        <td><%= graduate.firstname %></td>
+        <td><%= graduate.year %></td>
+        <td><%= graduate.department %></td>
+        <td><%= graduate.deathdate %></td>
+        <td><%= graduate.photos %></td>
+        <td><%= graduate.oversize %></td>
+        <% if user_signed_in? %>
+        <td><%= link_to 'Show', graduate %></td>
+        <td><%= link_to 'Edit', edit_graduate_path(graduate) %></td>
+        <td><%= link_to 'Destroy', graduate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if user_signed_in? %>
+<%= link_to 'New Graduate', new_graduate_path %>
+<% end %>
+
+<div style="width:100%; text-align:center;">
+<br>
+<%= link_to 'New Search', rbsc_site + "/databases/princeton-university-graduate-alumni-index-1839-1998" %>
+<br>
+<%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path %>
+</div>

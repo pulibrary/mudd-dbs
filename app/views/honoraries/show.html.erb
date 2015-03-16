@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lname:</strong>
+  <%= @honorary.lname %>
+</p>
+
+<p>
+  <strong>Fname:</strong>
+  <%= @honorary.fname %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @honorary.year %>
+</p>
+
+<p>
+  <strong>Death:</strong>
+  <%= @honorary.death %>
+</p>
+
+<p>
+  <strong>Degree:</strong>
+  <%= @honorary.degree %>
+</p>
+
+<p>
+  <strong>File:</strong>
+  <%= @honorary.file %>
+</p>
+
+<%= link_to 'Edit', edit_honorary_path(@honorary) %> |
+<%= link_to 'Back', honoraries_path %>

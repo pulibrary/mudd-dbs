@@ -66,7 +66,40 @@ def reset_audiovisuals
   load_audiovisuals
 end
 
+def delete_graduates
+  Graduate.delete_all
+end
+
+def load_graduates
+
+  FastSeeder.seed_csv!(Graduate, "Graduate.csv", :box, :lastname, :firstname, :year, :department, :deathdate, :photos, :oversize)
+
+end
+
+def reset_graduates
+  delete_graduates
+  load_graduates
+end
+
+
+def delete_honoraries
+  Honorary.delete_all
+end
+
+def load_honoraries
+
+  FastSeeder.seed_csv!(Honorary, "honorary.csv", :lname, :fname, :year, :death, :degree, :file)
+
+end
+
+def reset_honoraries
+  delete_honoraries
+  load_honoraries
+end
+
 #reset_alumni
 #reset_newalumni
 #reset_archboards
-reset_audiovisuals
+#reset_audiovisuals
+#reset_graduates
+reset_honoraries

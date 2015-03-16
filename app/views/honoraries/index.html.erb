@@ -1,0 +1,47 @@
+<center><h1>Honorary Degree Recipients, 1748-2001</h1></center>
+
+<table border=1 align="center" class="datatable">
+  <thead>
+    <tr>
+      <th>Last Name</th>
+      <th>First Name</th>
+      <th>Degree</th>
+      <th>Year Awarded</th>
+      <th>Year of Death</th>
+      <th>File</th>
+      <% if user_signed_in? %>
+      <th colspan="3"></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @honoraries.each do |honorary| %>
+      <tr>
+        <td><%= honorary.lname %></td>
+        <td><%= honorary.fname %></td>
+        <td><%= honorary.degree %></td>
+        <td><%= honorary.year %></td>
+        <td><%= honorary.death %></td>
+        <td><%= honorary.file %></td>
+        <% if user_signed_in? %>
+        <td><%= link_to 'Show', honorary %></td>
+        <td><%= link_to 'Edit', edit_honorary_path(honorary) %></td>
+        <td><%= link_to 'Destroy', honorary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if user_signed_in? %>
+<%= link_to 'New Honorary', new_honorary_path %>
+<% end %>
+
+<div style="width:100%; text-align:center;">
+<br>
+<%= link_to 'New Search', rbsc_site + "/databases/honorary-degree-index-1748-2001" %>
+<br>
+<%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path %>
+</div>

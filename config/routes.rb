@@ -1,5 +1,9 @@
 Alumni::Application.routes.draw do
 
+  resources :honoraries
+
+  resources :graduates
+
   resources :audio_visuals
 
   resources :archboards

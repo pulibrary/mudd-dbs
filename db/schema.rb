@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150309203449) do
+ActiveRecord::Schema.define(version: 20150316194132) do
 
   create_table "alumni", force: :cascade do |t|
     t.string   "box",        limit: 255
@@ -66,6 +66,30 @@ ActiveRecord::Schema.define(version: 20150309203449) do
     t.string   "notes",      limit: 255
     t.string   "id3",        limit: 255
     t.string   "index",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "graduates", force: :cascade do |t|
+    t.string   "box",        limit: 255
+    t.string   "lastname",   limit: 255
+    t.string   "firstname",  limit: 255
+    t.string   "year",       limit: 255
+    t.string   "department", limit: 255
+    t.string   "deathdate",  limit: 255
+    t.string   "photos",     limit: 255
+    t.string   "oversize",   limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "honoraries", force: :cascade do |t|
+    t.string   "lname",      limit: 255
+    t.string   "fname",      limit: 255
+    t.string   "year",       limit: 255
+    t.string   "death",      limit: 255
+    t.string   "degree",     limit: 255
+    t.string   "file",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
