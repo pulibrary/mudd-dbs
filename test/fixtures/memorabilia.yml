@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  box: MyString
+  category: MyString
+  description: MyString
+  classyear: MyString
+  year: MyString
+  reunion: MyString
+  provenance: MyString
+
+two:
+  box: MyString
+  category: MyString
+  description: MyString
+  classyear: MyString
+  year: MyString
+  reunion: MyString
+  provenance: MyString

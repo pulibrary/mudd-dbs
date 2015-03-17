@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Box:</strong>
+  <%= @memorabilium.box %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @memorabilium.category %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @memorabilium.description %>
+</p>
+
+<p>
+  <strong>Classyear:</strong>
+  <%= @memorabilium.classyear %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @memorabilium.year %>
+</p>
+
+<p>
+  <strong>Reunion:</strong>
+  <%= @memorabilium.reunion %>
+</p>
+
+<p>
+  <strong>Provenance:</strong>
+  <%= @memorabilium.provenance %>
+</p>
+
+<%= link_to 'Edit', edit_memorabilium_path(@memorabilium) %> |
+<%= link_to 'Back', memorabilia_path %>

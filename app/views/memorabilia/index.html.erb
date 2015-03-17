@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Memorabilia</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Box</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Classyear</th>
+      <th>Year</th>
+      <th>Reunion</th>
+      <th>Provenance</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @memorabilia.each do |memorabilium| %>
+      <tr>
+        <td><%= memorabilium.box %></td>
+        <td><%= memorabilium.category %></td>
+        <td><%= memorabilium.description %></td>
+        <td><%= memorabilium.classyear %></td>
+        <td><%= memorabilium.year %></td>
+        <td><%= memorabilium.reunion %></td>
+        <td><%= memorabilium.provenance %></td>
+        <td><%= link_to 'Show', memorabilium %></td>
+        <td><%= link_to 'Edit', edit_memorabilium_path(memorabilium) %></td>
+        <td><%= link_to 'Destroy', memorabilium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Memorabilium', new_memorabilium_path %>

@@ -1,0 +1,45 @@
+<%= form_for(@memorabilium) do |f| %>
+  <% if @memorabilium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@memorabilium.errors.count, "error") %> prohibited this memorabilium from being saved:</h2>
+
+      <ul>
+      <% @memorabilium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :box %><br>
+    <%= f.text_field :box %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :classyear %><br>
+    <%= f.text_field :classyear %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br>
+    <%= f.text_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :reunion %><br>
+    <%= f.text_field :reunion %>
+  </div>
+  <div class="field">
+    <%= f.label :provenance %><br>
+    <%= f.text_field :provenance %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

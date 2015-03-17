@@ -1,5 +1,7 @@
 Alumni::Application.routes.draw do
 
+  resources :memorabilia
+
   resources :honoraries
 
   resources :graduates
