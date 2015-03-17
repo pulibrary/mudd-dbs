@@ -1,8 +1,6 @@
-<p id="notice"><%= notice %></p>
+<center><h1>Princeton Memorabilia Collection</h1></center>
 
-<h1>Listing Memorabilia</h1>
-
-<table>
+<table border=1 align="center" class="datatable">
   <thead>
     <tr>
       <th>Box</th>
@@ -12,7 +10,9 @@
       <th>Year</th>
       <th>Reunion</th>
       <th>Provenance</th>
+      <% if user_signed_in? %>
       <th colspan="3"></th>
+      <% end %>
     </tr>
   </thead>
 
@@ -26,14 +26,24 @@
         <td><%= memorabilium.year %></td>
         <td><%= memorabilium.reunion %></td>
         <td><%= memorabilium.provenance %></td>
+        <% if user_signed_in? %>
         <td><%= link_to 'Show', memorabilium %></td>
         <td><%= link_to 'Edit', edit_memorabilium_path(memorabilium) %></td>
         <td><%= link_to 'Destroy', memorabilium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if user_signed_in? %>
 <%= link_to 'New Memorabilium', new_memorabilium_path %>
+<% end %>
+
+<div style="width:100%; text-align:center;">
+<br>
+<%= link_to 'New Search', rbsc_site + "/databases/princeton-memorabilia-collection" %>
+<br>
+<%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path %>
+</div>

@@ -4,7 +4,11 @@ class MemorabiliaController < ApplicationController
   # GET /memorabilia
   # GET /memorabilia.json
   def index
-    @memorabilia = Memorabilium.all
+    if params
+      @memorabilia = Memorabilium.search(params)
+    else
+      @memorabilia = Memorabilium.all
+    end
   end
 
   # GET /memorabilia/1

@@ -53,7 +53,7 @@ end
 
 def load_audiovisuals
 
-  parsed_file = SmarterCSV.process("db/seeds/AudioVisuals.csv", {:col_sep => "|", :force_simple_split => "true"}) 
+  parsed_file = SmarterCSV.process("db/seeds/AudioVisuals.csv", {:col_sep => "|", :force_simple_split => "true"})
 
   parsed_file.each do |value|
     AudioVisual.create(value)
@@ -103,7 +103,7 @@ end
 
 def load_memorabilia
 
-  parsed_file = SmarterCSV.process("db/seeds/Memorabilia.csv", {:col_sep => "|", :force_simple_split => "true"}) 
+  parsed_file = SmarterCSV.process("db/seeds/Memorabilia.csv", {:col_sep => "|", :force_simple_split => "true"})
 
   parsed_file.each do |value|
     Memorabilium.create(value)
@@ -116,10 +116,31 @@ def reset_memorabilia
   load_memorabilia
 end
 
+def delete_faculties
+  Faculty.delete_all
+end
+
+def load_faculties
+
+  #FastSeeder.seed_csv!(Faculty, "Faculty_test.csv", :access_id,:lname,:fname,:birth,:birth_year,:death,:leave,:dept,:box,:series)
+  parsed_file = SmarterCSV.process("db/seeds/Faculty_test.csv")
+
+  parsed_file.each do |value|
+    Faculty.create(value)
+  end
+
+end
+
+def reset_faculties
+  delete_faculties
+  load_faculties
+end
+
 #reset_alumni
 #reset_newalumni
 #reset_archboards
 #reset_audiovisuals
 #reset_graduates
 #reset_honoraries
-reset_memorabilia
+#reset_memorabilia
+reset_faculties

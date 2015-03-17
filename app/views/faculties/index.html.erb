@@ -1,0 +1,53 @@
+<center><h1>Faculty and Professional Staff Index, 1764-2006</h1></center>
+
+  <table border=1 align="center" class="datatable">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Last Name</th>
+      <th>First Name</th>
+      <th>Birth</th>
+      <th>Death</th>
+      <th>Leave</th>
+      <th>Dept</th>
+      <th>Box</th>
+      <th>Series</th>
+      <% if user_signed_in? %>
+      <th colspan="3"></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @faculties.each do |faculty| %>
+      <tr>
+        <td><%= faculty.id %></td>
+        <td><%= faculty.lname %></td>
+        <td><%= faculty.fname %></td>
+        <td><%= faculty.birth %></td>
+        <td><%= faculty.death %></td>
+        <td><%= faculty.leave %></td>
+        <td><%= faculty.dept %></td>
+        <td><%= faculty.box %></td>
+        <td><%= faculty.series %></td>
+        <% if user_signed_in? %>
+        <td><%= link_to 'Show', faculty %></td>
+        <td><%= link_to 'Edit', edit_faculty_path(faculty) %></td>
+        <td><%= link_to 'Destroy', faculty, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if user_signed_in? %>
+<%= link_to 'New Faculty', new_faculty_path %>
+<% end %>
+
+<div style="width:100%; text-align:center;">
+<br>
+<%= link_to 'New Search', rbsc_site + "/databases/faculty-and-professional-staff-index-1764-2006" %>
+<br>
+<%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path %>
+</div>
