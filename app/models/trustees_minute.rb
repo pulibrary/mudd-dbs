@@ -1,16 +1,15 @@
-class AudioVisual < ActiveRecord::Base
+class TrusteesMinute < ActiveRecord::Base
 
-	def self.search(params)
+  def self.search(params)
 	  w = {}
 	  q = []
 	  o = {}
 	  q2 = ""
 	  q3 = ""
-	  subjects = ["keyword1","keyword2","keyword3"]
+	  subjects = ["subject1","subject2","subject3"]
 	  operators = ["and","or","xor"]
-	  cols = [ "title",
-	  		   "creator",
-	  		   "notes"
+	  cols = [ "subject",
+	  		   "page"
 	  		  ]
 
 	  params.except(:action, :controller).each do |k, v|
@@ -28,15 +27,15 @@ class AudioVisual < ActiveRecord::Base
 	  	end
 	  end
 
-	  if !w["keyword2"].blank?
-	  	q2 = " " + o["operator1"] + " " + w["keyword2"]
+	  if !w["subject2"].blank?
+	  	q2 = " " + o["operator1"] + " " + w["subject2"]
 	  end
 
-	  if !w["keyword3"].blank?
-	  	q3 = " " + o["operator2"] + " " + w["keyword3"]
+	  if !w["subject3"].blank?
+	  	q3 = " " + o["operator2"] + " " + w["subject3"]
 	  end
 
-	  query = w["keyword1"] + q2 + q3
+	  query = w["subject1"] + q2 + q3
 
 	  where(query)
 

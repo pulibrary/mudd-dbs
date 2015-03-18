@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150317165721) do
+ActiveRecord::Schema.define(version: 20150317175428) do
 
   create_table "alumni", force: :cascade do |t|
     t.string   "box",        limit: 255
@@ -129,6 +129,15 @@ ActiveRecord::Schema.define(version: 20150317165721) do
     t.string   "academicfile", limit: 255
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+  end
+
+  create_table "trustees_minutes", force: :cascade do |t|
+    t.string   "access_id",  limit: 255
+    t.string   "subject",    limit: 255
+    t.string   "volume",     limit: 255
+    t.string   "page",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|

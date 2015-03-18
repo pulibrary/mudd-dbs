@@ -1,0 +1,48 @@
+<center><h1>Trustees Minutes, 1746-1894</h1></center>
+
+<% if !@trustees_minutes.blank? %>
+  <table border=1 align="center" class="datatable">
+    <thead>
+      <tr>
+        <th>Access</th>
+        <th>Subject</th>
+        <th>Volume</th>
+        <th>Page</th>
+        <% if user_signed_in? %>
+        <th colspan="3"></th>
+        <% end %>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @trustees_minutes.each do |trustees_minute| %>
+        <tr>
+          <td><%= trustees_minute.access_id %></td>
+          <td><%= trustees_minute.subject %></td>
+          <td><%= trustees_minute.volume %></td>
+          <td><%= trustees_minute.page %></td>
+          <% if user_signed_in? %>
+          <td><%= link_to 'Show', trustees_minute %></td>
+          <td><%= link_to 'Edit', edit_trustees_minute_path(trustees_minute) %></td>
+          <td><%= link_to 'Destroy', trustees_minute, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <center><p style="margin-top:100px;">Your search did not find any matches.</p></center>
+<% end %>
+
+
+<br>
+<% if user_signed_in? %>
+<%= link_to 'New Trustees minute', new_trustees_minute_path %>
+<% end %>
+
+<div style="width:100%; text-align:center;">
+<br>
+<%= link_to 'New Search', rbsc_site + "/databases/trustees-minutes-1746-1894" %>
+<br>
+<%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path %>
+</div>

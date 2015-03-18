@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Access:</strong>
+  <%= @trustees_minute.access_id %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @trustees_minute.subject %>
+</p>
+
+<p>
+  <strong>Volume:</strong>
+  <%= @trustees_minute.volume %>
+</p>
+
+<p>
+  <strong>Page:</strong>
+  <%= @trustees_minute.page %>
+</p>
+
+<%= link_to 'Edit', edit_trustees_minute_path(@trustees_minute) %> |
+<%= link_to 'Back', trustees_minutes_path %>

@@ -1,0 +1,33 @@
+<%= form_for(@trustees_minute) do |f| %>
+  <% if @trustees_minute.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trustees_minute.errors.count, "error") %> prohibited this trustees_minute from being saved:</h2>
+
+      <ul>
+      <% @trustees_minute.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :access_id %><br>
+    <%= f.text_field :access_id %>
+  </div>
+  <div class="field">
+    <%= f.label :subject %><br>
+    <%= f.text_field :subject %>
+  </div>
+  <div class="field">
+    <%= f.label :volume %><br>
+    <%= f.text_field :volume %>
+  </div>
+  <div class="field">
+    <%= f.label :page %><br>
+    <%= f.text_field :page %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

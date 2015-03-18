@@ -96,7 +96,8 @@ def reset_honoraries
   delete_honoraries
   load_honoraries
 end
-####
+
+
 def delete_memorabilia
   Memorabilium.delete_all
 end
@@ -136,6 +137,25 @@ def reset_faculties
   load_faculties
 end
 
+def delete_trustees_minutes
+  TrusteesMinute.delete_all
+end
+
+def load_trustees_minutes
+
+  parsed_file = SmarterCSV.process("db/seeds/TrusteesMinutes.csv", {:col_sep => "|", :force_simple_split => "true"})
+
+  parsed_file.each do |value|
+    TrusteesMinute.create(value)
+  end
+
+end
+
+def reset_trustees_minutes
+  delete_trustees_minutes
+  load_trustees_minutes
+end
+
 #reset_alumni
 #reset_newalumni
 #reset_archboards
@@ -143,4 +163,5 @@ end
 #reset_graduates
 #reset_honoraries
 #reset_memorabilia
-reset_faculties
+#reset_faculties
+reset_trustees_minutes

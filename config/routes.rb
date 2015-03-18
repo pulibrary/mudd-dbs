@@ -1,5 +1,7 @@
 Alumni::Application.routes.draw do
 
+  resources :trustees_minutes
+
   resources :faculties
 
   resources :memorabilia

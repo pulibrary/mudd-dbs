@@ -1,0 +1,2 @@
+module TrusteesMinutesHelper
+end
