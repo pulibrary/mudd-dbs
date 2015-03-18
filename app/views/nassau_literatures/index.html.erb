@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<center><h1>Faculty and Professional Staff Index, 1764-2006</h1></center>
+
+<table border=1 align="center" class="datatable">
+  <thead>
+    <tr>
+      <th>Last Name</th>
+      <th>First Name</th>
+      <th>Class Year</th>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Issue no</th>
+      <th>Pages</th>
+      <% if user_signed_in? %>
+      <th colspan="3"></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nassau_literatures.each do |nassau_literature| %>
+      <tr>
+        <td><%= nassau_literature.lname %></td>
+        <td><%= nassau_literature.fname %></td>
+        <td><%= nassau_literature.classyear %></td>
+        <td><%= nassau_literature.title %></td>
+        <td><%= nassau_literature.date %></td>
+        <td><%= nassau_literature.issue_no %></td>
+        <td><%= nassau_literature.pages %></td>
+        <% if user_signed_in? %>
+        <td><%= link_to 'Show', nassau_literature %></td>
+        <td><%= link_to 'Edit', edit_nassau_literature_path(nassau_literature) %></td>
+        <td><%= link_to 'Destroy', nassau_literature, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if user_signed_in? %>
+<%= link_to 'New Nassau literature', new_nassau_literature_path %>
+<% end %>
+
+<div style="width:100%; text-align:center;">
+<br>
+<%= link_to 'New Search', rbsc_site + "/databases/nassau-literary-magazine-index-1842-1942" %>
+<br>
+<%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path %>
+</div>

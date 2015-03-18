@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150317175428) do
+ActiveRecord::Schema.define(version: 20150318160527) do
 
   create_table "alumni", force: :cascade do |t|
     t.string   "box",        limit: 255
@@ -119,6 +119,18 @@ ActiveRecord::Schema.define(version: 20150317175428) do
     t.string   "provenance",  limit: 255
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+  end
+
+  create_table "nassau_literatures", force: :cascade do |t|
+    t.string   "lname",      limit: 255
+    t.string   "fname",      limit: 255
+    t.string   "classyear",  limit: 255
+    t.string   "title",      limit: 255
+    t.string   "date",       limit: 255
+    t.string   "issue_no",   limit: 255
+    t.string   "pages",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "new_alumni", force: :cascade do |t|

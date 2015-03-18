@@ -1,5 +1,7 @@
 Alumni::Application.routes.draw do
 
+  resources :nassau_literatures
+
   resources :trustees_minutes
 
   resources :faculties

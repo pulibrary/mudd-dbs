@@ -156,6 +156,27 @@ def reset_trustees_minutes
   load_trustees_minutes
 end
 
+
+def delete_nassau_literatures
+  NassauLiterature.delete_all
+end
+
+def load_nassau_literatures
+
+  parsed_file = SmarterCSV.process("db/seeds/NASSLIT.csv", {:col_sep => "|", :force_simple_split => "true"})
+
+  parsed_file.each do |value|
+    NassauLiterature.create(value)
+  end
+
+end
+
+def reset_nassau_literatures
+  delete_nassau_literatures
+  load_nassau_literatures
+end
+
+
 #reset_alumni
 #reset_newalumni
 #reset_archboards
@@ -164,4 +185,5 @@ end
 #reset_honoraries
 #reset_memorabilia
 #reset_faculties
-reset_trustees_minutes
+#reset_trustees_minutes
+reset_nassau_literatures

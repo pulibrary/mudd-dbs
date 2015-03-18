@@ -1,0 +1,45 @@
+<%= form_for(@nassau_literature) do |f| %>
+  <% if @nassau_literature.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nassau_literature.errors.count, "error") %> prohibited this nassau_literature from being saved:</h2>
+
+      <ul>
+      <% @nassau_literature.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :lname %><br>
+    <%= f.text_field :lname %>
+  </div>
+  <div class="field">
+    <%= f.label :fname %><br>
+    <%= f.text_field :fname %>
+  </div>
+  <div class="field">
+    <%= f.label :classyear %><br>
+    <%= f.text_field :classyear %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.text_field :date %>
+  </div>
+  <div class="field">
+    <%= f.label :issue_no %><br>
+    <%= f.text_field :issue_no %>
+  </div>
+  <div class="field">
+    <%= f.label :pages %><br>
+    <%= f.text_field :pages %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
