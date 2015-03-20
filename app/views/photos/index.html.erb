@@ -17,9 +17,8 @@
       <th>Publication</th>
       <th>Photographer</th>
       <th>Image Type</th>
-      <th>Accession num</th>
-      <th>E num</th>
-      <th>Negative num</th>
+      <th>Negative #</th>
+      <th>Image #</th>
       <th>Provenance</th>
       <th>Online image</th>
       <% if user_signed_in? %>
@@ -43,9 +42,8 @@
         <td><%= photo.publication %></td>
         <td><%= photo.photographer %></td>
         <td><%= photo.image_type %></td>
-        <td><%= photo.accession_num %></td>
-        <td><%= photo.e_num %></td>
         <td><%= photo.negative_num %></td>
+        <td><%= photo.image_num %></td>
         <td><%= photo.provenance %></td>
         <td><%= photo.online_image %></td>
         <% if user_signed_in? %>
