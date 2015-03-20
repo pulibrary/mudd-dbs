@@ -1,0 +1,53 @@
+<%= form_for(@memorial) do |f| %>
+  <% if @memorial.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@memorial.errors.count, "error") %> prohibited this memorial from being saved:</h2>
+
+      <ul>
+      <% @memorial.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :publication %><br>
+    <%= f.text_field :publication %>
+  </div>
+  <div class="field">
+    <%= f.label :volume %><br>
+    <%= f.text_field :volume %>
+  </div>
+  <div class="field">
+    <%= f.label :no %><br>
+    <%= f.text_field :no %>
+  </div>
+  <div class="field">
+    <%= f.label :publish_date %><br>
+    <%= f.text_field :publish_date %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :subject %><br>
+    <%= f.text_field :subject %>
+  </div>
+  <div class="field">
+    <%= f.label :class_year %><br>
+    <%= f.text_field :class_year %>
+  </div>
+  <div class="field">
+    <%= f.label :class_grade %><br>
+    <%= f.text_field :class_grade %>
+  </div>
+  <div class="field">
+    <%= f.label :page %><br>
+    <%= f.text_field :page %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

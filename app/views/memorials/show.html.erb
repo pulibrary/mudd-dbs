@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Publication:</strong>
+  <%= @memorial.publication %>
+</p>
+
+<p>
+  <strong>Volume:</strong>
+  <%= @memorial.volume %>
+</p>
+
+<p>
+  <strong>No:</strong>
+  <%= @memorial.no %>
+</p>
+
+<p>
+  <strong>Publish date:</strong>
+  <%= @memorial.publish_date %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @memorial.type %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @memorial.subject %>
+</p>
+
+<p>
+  <strong>Class year:</strong>
+  <%= @memorial.class_year %>
+</p>
+
+<p>
+  <strong>Class grade:</strong>
+  <%= @memorial.class_grade %>
+</p>
+
+<p>
+  <strong>Page:</strong>
+  <%= @memorial.page %>
+</p>
+
+<%= link_to 'Edit', edit_memorial_path(@memorial) %> |
+<%= link_to 'Back', memorials_path %>

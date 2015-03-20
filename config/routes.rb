@@ -1,5 +1,13 @@
 Alumni::Application.routes.draw do
 
+  resources :photos
+
+  resources :wwii_memorials
+
+  resources :trustees
+
+  resources :memorials
+
   resources :nassau_literatures
 
   resources :trustees_minutes

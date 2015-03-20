@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  access_id: MyString
+  full_name: MyString
+  trustee_type: MyString
+  dates_of_service: MyString
+  university_status: MyString
+  first_year: MyString
+
+two:
+  access_id: MyString
+  full_name: MyString
+  trustee_type: MyString
+  dates_of_service: MyString
+  university_status: MyString
+  first_year: MyString

@@ -1,9 +1,9 @@
 class Alumn < ActiveRecord::Base
 	# represents alumns from 1748-1920... perhaps combine with new_alumn someday
-	
+
 	def self.search(params)
 	  q = Array.new
-	  cols = [ "box","lname","fname","year","graduate","photos","oversize" ] 
+	  cols = [ "box","lname","fname","year","graduate","photos","oversize" ]
 
 	  params.except(:action, :controller).each do |k, v|
 	  	if cols.include? k.downcase
@@ -12,7 +12,7 @@ class Alumn < ActiveRecord::Base
 	  end
 
   	  where(q.join(" AND "))
- 
+
 	end
 
 end

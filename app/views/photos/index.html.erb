@@ -1,0 +1,71 @@
+<p id="notice"><%= notice %></p>
+
+<center><h1>Princeton University Historical Photograph Collection</h1></center>
+
+<table border=1 align="center" class="datatable">
+  <thead>
+    <tr>
+      <th>Division</th>
+
+      <th>Box</th>
+      <th>Item #</th>
+      <th>Subseries</th>
+      <th>General Subject</th>
+      <th>Specific Subject</th>
+      <th>Notes</th>
+      <th>Dates</th>
+      <th>Publication</th>
+      <th>Photographer</th>
+      <th>Image Type</th>
+      <th>Accession num</th>
+      <th>E num</th>
+      <th>Negative num</th>
+      <th>Provenance</th>
+      <th>Online image</th>
+      <% if user_signed_in? %>
+      <th colspan="3"></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @photos.each do |photo| %>
+      <tr>
+        <td><%= photo.division %></td>
+
+        <td><%= photo.box %></td>
+        <td><%= photo.item_num %></td>
+        <td><%= photo.subseries %></td>
+        <td><%= photo.general_sub %></td>
+        <td><%= photo.specific_sub %></td>
+        <td><%= photo.notes %></td>
+        <td><%= photo.date_taken %></td>
+        <td><%= photo.publication %></td>
+        <td><%= photo.photographer %></td>
+        <td><%= photo.image_type %></td>
+        <td><%= photo.accession_num %></td>
+        <td><%= photo.e_num %></td>
+        <td><%= photo.negative_num %></td>
+        <td><%= photo.provenance %></td>
+        <td><%= photo.online_image %></td>
+        <% if user_signed_in? %>
+        <td><%= link_to 'Show', photo %></td>
+        <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
+        <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if user_signed_in? %>
+<%= link_to 'New Photo', new_photo_path %>
+<% end %>
+
+<div style="width:100%; text-align:center;">
+<br>
+<%= link_to 'New Search', rbsc_site + "/databases/princeton-university-historical-photograph-collection" %>
+<br>
+<%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path %>
+</div>

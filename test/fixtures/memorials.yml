@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  publication: MyString
+  volume: MyString
+  'no': MyString
+  publish_date: MyString
+  type: 
+  subject: MyString
+  class_year: MyString
+  class_grade: MyString
+  page: MyString
+
+two:
+  publication: MyString
+  volume: MyString
+  'no': MyString
+  publish_date: MyString
+  type: 
+  subject: MyString
+  class_year: MyString
+  class_grade: MyString
+  page: MyString

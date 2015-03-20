@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image_num: MyString
+  box: MyString
+  item_num: MyString
+  accession_num: MyString
+  e_num: MyString
+  negative_num: MyString
+  image_type: MyString
+  provenance: MyString
+  photographer: MyString
+  date_taken: MyString
+  division: MyString
+  subseries: MyString
+  general_sub: MyString
+  specific_sub: MyString
+  publication: MyString
+  notes: MyString
+  online_image: MyString
+
+two:
+  image_num: MyString
+  box: MyString
+  item_num: MyString
+  accession_num: MyString
+  e_num: MyString
+  negative_num: MyString
+  image_type: MyString
+  provenance: MyString
+  photographer: MyString
+  date_taken: MyString
+  division: MyString
+  subseries: MyString
+  general_sub: MyString
+  specific_sub: MyString
+  publication: MyString
+  notes: MyString
+  online_image: MyString

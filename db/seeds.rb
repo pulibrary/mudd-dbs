@@ -124,7 +124,7 @@ end
 def load_faculties
 
   #FastSeeder.seed_csv!(Faculty, "Faculty_test.csv", :access_id,:lname,:fname,:birth,:birth_year,:death,:leave,:dept,:box,:series)
-  parsed_file = SmarterCSV.process("db/seeds/Faculty_test.csv")
+  parsed_file = SmarterCSV.process("db/seeds/Faculty.csv")
 
   parsed_file.each do |value|
     Faculty.create(value)
@@ -176,6 +176,87 @@ def reset_nassau_literatures
   load_nassau_literatures
 end
 
+def delete_memorials
+  Memorial.delete_all
+end
+
+def load_memorials
+
+  #FastSeeder.seed_csv!(Memorial, "PAW.csv", :publication :volume :no :publish_date :type :subject :class_year :class_grade :page)
+
+  parsed_file = SmarterCSV.process("db/seeds/PAW.csv")
+
+  parsed_file.each do |value|
+    Memorial.create(value)
+  end
+
+end
+
+def reset_memorials
+  delete_memorials
+  load_memorials
+end
+
+def delete_trustees
+  Trustee.delete_all
+end
+
+def load_trustees
+
+  parsed_file = SmarterCSV.process("db/seeds/TrusteesList.csv")
+
+  parsed_file.each do |value|
+    Trustee.create(value)
+  end
+
+end
+
+def reset_trustees
+  delete_trustees
+  load_trustees
+end
+
+def delete_wwii_memorials
+  WwiiMemorial.delete_all
+end
+
+def load_wwii_memorials
+
+  parsed_file = SmarterCSV.process("db/seeds/WarBook.csv", {:col_sep => "|", :force_simple_split => "true"})
+
+  parsed_file.each do |value|
+    WwiiMemorial.create(value)
+  end
+
+end
+
+def reset_wwii_memorials
+  delete_wwii_memorials
+  load_wwii_memorials
+end
+
+def delete_photos
+  puts "deleting photos..."
+  Photo.delete_all
+end
+
+def load_photos
+  print "loading photos..."
+  parsed_file = SmarterCSV.process("db/seeds/Photos.csv", {:col_sep => "|", :force_simple_split => "true"})
+
+  parsed_file.each do |value|
+    print "."
+    Photo.create(value)
+  end
+
+end
+
+def reset_photos
+  delete_photos
+  load_photos
+  puts "!"
+  puts "photos loaded!"
+end
 
 #reset_alumni
 #reset_newalumni
@@ -186,4 +267,8 @@ end
 #reset_memorabilia
 #reset_faculties
 #reset_trustees_minutes
-reset_nassau_literatures
+#reset_nassau_literatures
+#reset_memorials
+#reset_trustees
+#reset_wwii_memorials
+reset_photos

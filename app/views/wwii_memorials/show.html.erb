@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Access:</strong>
+  <%= @wwii_memorial.access_id %>
+</p>
+
+<p>
+  <strong>Rank:</strong>
+  <%= @wwii_memorial.rank %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @wwii_memorial.name %>
+</p>
+
+<p>
+  <strong>Death date:</strong>
+  <%= @wwii_memorial.death_date %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @wwii_memorial.place %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @wwii_memorial.year %>
+</p>
+
+<p>
+  <strong>Death year:</strong>
+  <%= @wwii_memorial.death_year %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @wwii_memorial.last_name %>
+</p>
+
+<%= link_to 'Edit', edit_wwii_memorial_path(@wwii_memorial) %> |
+<%= link_to 'Back', wwii_memorials_path %>

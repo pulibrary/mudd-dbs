@@ -1,0 +1,41 @@
+<%= form_for(@trustee) do |f| %>
+  <% if @trustee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trustee.errors.count, "error") %> prohibited this trustee from being saved:</h2>
+
+      <ul>
+      <% @trustee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :access_id %><br>
+    <%= f.text_field :access_id %>
+  </div>
+  <div class="field">
+    <%= f.label :full_name %><br>
+    <%= f.text_field :full_name %>
+  </div>
+  <div class="field">
+    <%= f.label :trustee_type %><br>
+    <%= f.text_field :trustee_type %>
+  </div>
+  <div class="field">
+    <%= f.label :dates_of_service %><br>
+    <%= f.text_field :dates_of_service %>
+  </div>
+  <div class="field">
+    <%= f.label :university_status %><br>
+    <%= f.text_field :university_status %>
+  </div>
+  <div class="field">
+    <%= f.label :first_year %><br>
+    <%= f.text_field :first_year %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image num:</strong>
+  <%= @photo.image_num %>
+</p>
+
+<p>
+  <strong>Box:</strong>
+  <%= @photo.box %>
+</p>
+
+<p>
+  <strong>Item num:</strong>
+  <%= @photo.item_num %>
+</p>
+
+<p>
+  <strong>Accession num:</strong>
+  <%= @photo.accession_num %>
+</p>
+
+<p>
+  <strong>E num:</strong>
+  <%= @photo.e_num %>
+</p>
+
+<p>
+  <strong>Negative num:</strong>
+  <%= @photo.negative_num %>
+</p>
+
+<p>
+  <strong>Image type:</strong>
+  <%= @photo.image_type %>
+</p>
+
+<p>
+  <strong>Provenance:</strong>
+  <%= @photo.provenance %>
+</p>
+
+<p>
+  <strong>Photographer:</strong>
+  <%= @photo.photographer %>
+</p>
+
+<p>
+  <strong>Date taken:</strong>
+  <%= @photo.date_taken %>
+</p>
+
+<p>
+  <strong>Division:</strong>
+  <%= @photo.division %>
+</p>
+
+<p>
+  <strong>Subseries:</strong>
+  <%= @photo.subseries %>
+</p>
+
+<p>
+  <strong>General sub:</strong>
+  <%= @photo.general_sub %>
+</p>
+
+<p>
+  <strong>Specific sub:</strong>
+  <%= @photo.specific_sub %>
+</p>
+
+<p>
+  <strong>Publication:</strong>
+  <%= @photo.publication %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @photo.notes %>
+</p>
+
+<p>
+  <strong>Online image:</strong>
+  <%= @photo.online_image %>
+</p>
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>

@@ -1,0 +1,49 @@
+<%= form_for(@wwii_memorial) do |f| %>
+  <% if @wwii_memorial.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@wwii_memorial.errors.count, "error") %> prohibited this wwii_memorial from being saved:</h2>
+
+      <ul>
+      <% @wwii_memorial.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :access_id %><br>
+    <%= f.text_field :access_id %>
+  </div>
+  <div class="field">
+    <%= f.label :rank %><br>
+    <%= f.text_field :rank %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :death_date %><br>
+    <%= f.text_field :death_date %>
+  </div>
+  <div class="field">
+    <%= f.label :place %><br>
+    <%= f.text_field :place %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br>
+    <%= f.text_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :death_year %><br>
+    <%= f.text_field :death_year %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

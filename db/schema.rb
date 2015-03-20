@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150318160527) do
+ActiveRecord::Schema.define(version: 20150320144458) do
 
   create_table "alumni", force: :cascade do |t|
     t.string   "box",        limit: 255
@@ -121,6 +121,20 @@ ActiveRecord::Schema.define(version: 20150318160527) do
     t.datetime "updated_at",              null: false
   end
 
+  create_table "memorials", force: :cascade do |t|
+    t.string   "publication",  limit: 255
+    t.string   "volume",       limit: 255
+    t.string   "no",           limit: 255
+    t.string   "publish_date", limit: 255
+    t.string   "article_type", limit: 255
+    t.string   "subject",      limit: 255
+    t.string   "class_year",   limit: 255
+    t.string   "class_grade",  limit: 255
+    t.string   "page",         limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "nassau_literatures", force: :cascade do |t|
     t.string   "lname",      limit: 255
     t.string   "fname",      limit: 255
@@ -141,6 +155,39 @@ ActiveRecord::Schema.define(version: 20150318160527) do
     t.string   "academicfile", limit: 255
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "image_num",     limit: 255
+    t.string   "box",           limit: 255
+    t.string   "item_num",      limit: 255
+    t.string   "accession_num", limit: 255
+    t.string   "e_num",         limit: 255
+    t.string   "negative_num",  limit: 255
+    t.string   "image_type",    limit: 255
+    t.string   "provenance",    limit: 255
+    t.string   "photographer",  limit: 255
+    t.string   "date_taken",    limit: 255
+    t.string   "division",      limit: 255
+    t.string   "subseries",     limit: 255
+    t.string   "general_sub",   limit: 255
+    t.string   "specific_sub",  limit: 255
+    t.string   "publication",   limit: 255
+    t.string   "notes",         limit: 255
+    t.string   "online_image",  limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "trustees", force: :cascade do |t|
+    t.string   "access_id",         limit: 255
+    t.string   "full_name",         limit: 255
+    t.string   "trustee_type",      limit: 255
+    t.string   "dates_of_service",  limit: 255
+    t.string   "university_status", limit: 255
+    t.string   "first_year",        limit: 255
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "trustees_minutes", force: :cascade do |t|
@@ -169,5 +216,18 @@ ActiveRecord::Schema.define(version: 20150318160527) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "wwii_memorials", force: :cascade do |t|
+    t.string   "access_id",  limit: 255
+    t.string   "rank",       limit: 255
+    t.string   "name",       limit: 255
+    t.string   "death_date", limit: 255
+    t.string   "place",      limit: 255
+    t.string   "year",       limit: 255
+    t.string   "death_year", limit: 255
+    t.string   "last_name",  limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
 end

@@ -1,0 +1,85 @@
+<%= form_for(@photo) do |f| %>
+  <% if @photo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+
+      <ul>
+      <% @photo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :image_num %><br>
+    <%= f.text_field :image_num %>
+  </div>
+  <div class="field">
+    <%= f.label :box %><br>
+    <%= f.text_field :box %>
+  </div>
+  <div class="field">
+    <%= f.label :item_num %><br>
+    <%= f.text_field :item_num %>
+  </div>
+  <div class="field">
+    <%= f.label :accession_num %><br>
+    <%= f.text_field :accession_num %>
+  </div>
+  <div class="field">
+    <%= f.label :e_num %><br>
+    <%= f.text_field :e_num %>
+  </div>
+  <div class="field">
+    <%= f.label :negative_num %><br>
+    <%= f.text_field :negative_num %>
+  </div>
+  <div class="field">
+    <%= f.label :image_type %><br>
+    <%= f.text_field :image_type %>
+  </div>
+  <div class="field">
+    <%= f.label :provenance %><br>
+    <%= f.text_field :provenance %>
+  </div>
+  <div class="field">
+    <%= f.label :photographer %><br>
+    <%= f.text_field :photographer %>
+  </div>
+  <div class="field">
+    <%= f.label :date_taken %><br>
+    <%= f.text_field :date_taken %>
+  </div>
+  <div class="field">
+    <%= f.label :division %><br>
+    <%= f.text_field :division %>
+  </div>
+  <div class="field">
+    <%= f.label :subseries %><br>
+    <%= f.text_field :subseries %>
+  </div>
+  <div class="field">
+    <%= f.label :general_sub %><br>
+    <%= f.text_field :general_sub %>
+  </div>
+  <div class="field">
+    <%= f.label :specific_sub %><br>
+    <%= f.text_field :specific_sub %>
+  </div>
+  <div class="field">
+    <%= f.label :publication %><br>
+    <%= f.text_field :publication %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_field :notes %>
+  </div>
+  <div class="field">
+    <%= f.label :online_image %><br>
+    <%= f.text_field :online_image %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

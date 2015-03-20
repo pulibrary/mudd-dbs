@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<center><h1>World War II Memorial Book</h1></center>
+
+<table border=1 align="center" class="datatable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Rank and Branch of Service</th>
+      <th>Year of Death</th>
+      <th>Place of Death</th>
+      <th>Class Year</th>
+      <% if user_signed_in? %>
+      <th colspan="3"></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wwii_memorials.each do |wwii_memorial| %>
+      <tr>
+        <td><%= wwii_memorial.name %></td>
+        <td><%= wwii_memorial.rank %></td>
+        <td><%= wwii_memorial.death_year %></td>
+        <td><%= wwii_memorial.place %></td>
+        <td><%= wwii_memorial.year %></td>
+        <% if user_signed_in? %>
+        <td><%= link_to 'Show', wwii_memorial %></td>
+        <td><%= link_to 'Edit', edit_wwii_memorial_path(wwii_memorial) %></td>
+        <td><%= link_to 'Destroy', wwii_memorial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if user_signed_in? %>
+<%= link_to 'New Wwii memorial', new_wwii_memorial_path %>
+<% end %>
+
+<div style="width:100%; text-align:center;">
+<br>
+<%= link_to 'New Search', rbsc_site + "/databases/world-war-ii-memorial-book" %>
+<br>
+<%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path %>
+</div>

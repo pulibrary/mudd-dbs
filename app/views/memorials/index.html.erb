@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<center><h1>Princeton Alumni Weekly Memorial Index, 1894-2011</h1></center>
+
+<table border=1 align="center" class="datatable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Undg Class</th>
+      <th>Grad Class</th>
+      <th>Publication</th>
+      <th>Volume</th>
+      <th>No</th>
+      <th>Date</th>
+      <th>Page</th>
+      <% if user_signed_in? %>
+      <th colspan="3"></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @memorials.each do |memorial| %>
+      <tr>
+        <td><%= memorial.subject %></td>
+        <td><%= memorial.publication %></td>
+        <td><%= memorial.volume %></td>
+        <td><%= memorial.no %></td>
+        <td><%= memorial.publish_date %></td>
+        <td><%= memorial.class_year %></td>
+        <td><%= memorial.class_grade %></td>
+        <td><%= memorial.page %></td>
+        <% if user_signed_in? %>
+        <td><%= link_to 'Show', memorial %></td>
+        <td><%= link_to 'Edit', edit_memorial_path(memorial) %></td>
+        <td><%= link_to 'Destroy', memorial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% if user_signed_in? %>
+<%= link_to 'New Memorial', new_memorial_path %>
+<% end %>
+
+<div style="width:100%; text-align:center;">
+<br>
+<%= link_to 'New Search', rbsc_site + "/databases/princeton-alumni-weekly-memorial-index-1894-2011" %>
+<br>
+<%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path %>
+</div>
