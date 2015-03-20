@@ -260,7 +260,7 @@ end
 
 #reset_alumni
 #reset_newalumni
-#reset_archboards
+reset_archboards
 #reset_audiovisuals
 #reset_graduates
 #reset_honoraries
@@ -271,4 +271,4 @@ end
 #reset_memorials
 #reset_trustees
 #reset_wwii_memorials
-reset_photos
+#reset_photos

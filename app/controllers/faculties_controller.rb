@@ -5,9 +5,9 @@ class FacultiesController < ApplicationController
   # GET /faculties.json
   def index
     if params
-      @faculties = Faculty.search(params)
+      @faculties = Faculty.search(params).page(params[:page])
     else
-      @faculties = Faculty.all
+      @faculties = Faculty.all.page(params[:page])
     end
   end
 

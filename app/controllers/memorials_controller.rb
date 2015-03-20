@@ -5,9 +5,9 @@ class MemorialsController < ApplicationController
   # GET /memorials.json
   def index
     if params
-      @memorials = Memorial.search(params)
+      @memorials = Memorial.search(params).page(params[:page])
     else
-      @memorials = Memorial.all
+      @memorials = Memorial.all.page(params[:page])
     end
   end
 

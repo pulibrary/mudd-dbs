@@ -1,5 +1,9 @@
 <center><h1>Trustees Minutes, 1746-1894</h1></center>
 
+<div class="pagination">
+  <%= page_entries_info @trustees_minutes %>
+  <%= paginate @trustees_minutes %>
+</div>
 <% if !@trustees_minutes.blank? %>
   <table border=1 align="center" class="datatable">
     <thead>

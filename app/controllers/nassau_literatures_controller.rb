@@ -5,9 +5,9 @@ class NassauLiteraturesController < ApplicationController
   # GET /nassau_literatures.json
   def index
     if params
-      @nassau_literatures = NassauLiterature.search(params)
+      @nassau_literatures = NassauLiterature.search(params).page(params[:page])
     else
-      @nassau_literatures = NassauLiterature.all
+      @nassau_literatures = NassauLiterature.all.page(params[:page])
     end
   end
 

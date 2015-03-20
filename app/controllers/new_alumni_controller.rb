@@ -5,9 +5,9 @@ class NewAlumniController < ApplicationController
   # GET /new_alumni.json
   def index
     if params
-      @new_alumni = NewAlumn.search(params)
+      @new_alumni = NewAlumn.search(params).page(params[:page])
     else
-      @new_alumni = NewAlumn.all
+      @new_alumni = NewAlumn.all.page(params[:page])
     end
   end
 

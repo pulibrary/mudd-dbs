@@ -2,6 +2,11 @@
 
 <center><h1>Princeton University Historical Photograph Collection</h1></center>
 
+<div class="pagination">
+  <%= page_entries_info @photos %>
+  <%= paginate @photos %>
+</div>
+<% if !@photos.blank? %>
 <table border=1 align="center" class="datatable">
   <thead>
     <tr>
@@ -55,6 +60,7 @@
     <% end %>
   </tbody>
 </table>
+<% end %>
 
 <br>
 <% if user_signed_in? %>

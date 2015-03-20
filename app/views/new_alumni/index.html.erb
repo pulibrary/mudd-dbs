@@ -1,4 +1,12 @@
+<p id="notice"><%= notice %></p>
+
 <center><h1>Princeton Undergraduate Alumni Index, 1921-2005</h1></center>
+
+<div class="pagination">
+  <%= page_entries_info @new_alumni %>
+  <%= paginate @new_alumni %>
+</div>
+<% if !@new_alumni.blank? %>
 <table border=1 align="center" class="datatable">
   <thead>
     <tr>
@@ -30,6 +38,7 @@
     <% end %>
   </tbody>
 </table>
+<% end %>
 
 <br>
 <% if user_signed_in? %>

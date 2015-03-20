@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <center><h1>World War II Memorial Book</h1></center>
-
+<div class="pagination">
+  <%= page_entries_info @wwii_memorials %>
+  <%= paginate @wwii_memorials %>
+</div>
+<% if !@wwii_memorials.blank? %>
 <table border=1 align="center" class="datatable">
   <thead>
     <tr>
@@ -33,6 +37,7 @@
     <% end %>
   </tbody>
 </table>
+<% end %>
 
 <br>
 <% if user_signed_in? %>

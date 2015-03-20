@@ -5,9 +5,9 @@ class HonorariesController < ApplicationController
   # GET /honoraries.json
   def index
     if params
-      @honoraries = Honorary.search(params)
+      @honoraries = Honorary.search(params).page(params[:page])
     else
-      @honoraries = Honorary.all
+      @honoraries = Honorary.all.page(params[:page])
     end
   end
 

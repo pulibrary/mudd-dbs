@@ -2,6 +2,12 @@
 
 <center><h1>Faculty and Professional Staff Index, 1764-2006</h1></center>
 
+<div class="pagination">
+  <%= page_entries_info @nassau_literatures %>
+  <%= paginate @nassau_literatures %>
+</div>
+
+<% if !@nassau_literatures.blank? %>
 <table border=1 align="center" class="datatable">
   <thead>
     <tr>
@@ -37,6 +43,7 @@
     <% end %>
   </tbody>
 </table>
+<% end %>
 
 <br>
 <% if user_signed_in? %>

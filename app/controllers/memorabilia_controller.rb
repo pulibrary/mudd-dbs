@@ -5,9 +5,9 @@ class MemorabiliaController < ApplicationController
   # GET /memorabilia.json
   def index
     if params
-      @memorabilia = Memorabilium.search(params)
+      @memorabilia = Memorabilium.search(params).page(params[:page])
     else
-      @memorabilia = Memorabilium.all
+      @memorabilia = Memorabilium.all.page(params[:page])
     end
   end
 

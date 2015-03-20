@@ -1,7 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Princeton University Historical Audio-Visual Collection</h1>
+<center><h1>Princeton University Historical Audio-Visual Collection</h1></center>
 
+<div class="pagination">
+  <%= page_entries_info @audio_visuals %>
+  <%= paginate @audio_visuals %>
+</div>
+
+<% if !@audio_visuals.blank? %>
 <table border=1 align="center" class="datatable">
   <thead>
     <tr>
@@ -45,6 +51,7 @@
     <% end %>
   </tbody>
 </table>
+<% end %>
 
 <br>
 <% if user_signed_in? %>

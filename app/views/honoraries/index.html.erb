@@ -1,5 +1,13 @@
+<p id="notice"><%= notice %></p>
+
 <center><h1>Honorary Degree Recipients, 1748-2001</h1></center>
 
+<div class="pagination">
+  <%= page_entries_info @honoraries %>
+  <%= paginate @honoraries %>
+</div>
+
+<% if !@honoraries.blank? %>
 <table border=1 align="center" class="datatable">
   <thead>
     <tr>
@@ -33,6 +41,7 @@
     <% end %>
   </tbody>
 </table>
+<% end %>
 
 <br>
 <% if user_signed_in? %>

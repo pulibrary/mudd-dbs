@@ -5,9 +5,9 @@ class AudioVisualsController < ApplicationController
   # GET /audio_visuals.json
   def index
     if params
-      @audio_visuals = AudioVisual.search(params)
+      @audio_visuals = AudioVisual.search(params).page(params[:page])
     else
-      @audio_visuals = AudioVisual.all
+      @audio_visuals = AudioVisual.all.page(params[:page])
     end
   end
 

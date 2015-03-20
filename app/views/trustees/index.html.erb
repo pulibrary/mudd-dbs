@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <center><h1>Trustee Index, 1746-2001</h1></center>
-
+<div class="pagination">
+  <%= page_entries_info @trustees %>
+  <%= paginate @trustees %>
+</div>
+<% if !@trustees.blank? %>
 <table border=1 align="center" class="datatable">
   <thead>
     <tr>
@@ -33,6 +37,7 @@
     <% end %>
   </tbody>
 </table>
+<% end %>
 
 <br>
 <% if user_signed_in? %>

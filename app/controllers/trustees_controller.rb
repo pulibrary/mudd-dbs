@@ -5,9 +5,9 @@ class TrusteesController < ApplicationController
   # GET /trustees.json
   def index
     if params
-      @trustees = Trustee.search(params)
+      @trustees = Trustee.search(params).page(params[:page])
     else
-      @trustees = Trustee.all
+      @trustees = Trustee.all.page(params[:page])
     end
   end
 

@@ -1,7 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Architectural Presentation Boards</h1>
+<center><h1>Architectural Presentation Boards</h1></center>
 
+<div class="pagination">
+  <%= page_entries_info @archboards %>
+  <%= paginate @archboards %>
+</div>
+
+<% if !@archboards.blank? %>
 <table border=1 align="center" class="datatable">
   <thead>
     <tr>
@@ -67,6 +73,7 @@
     <% end %>
   </tbody>
 </table>
+<% end %>
 
 <br>
 <% if user_signed_in? %>

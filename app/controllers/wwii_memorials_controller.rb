@@ -5,9 +5,9 @@ class WwiiMemorialsController < ApplicationController
   # GET /wwii_memorials.json
   def index
     if params
-      @wwii_memorials = WwiiMemorial.search(params)
+      @wwii_memorials = WwiiMemorial.search(params).page(params[:page])
     else
-      @wwii_memorials = WwiiMemorial.all
+      @wwii_memorials = WwiiMemorial.all.page(params[:page])
     end
   end
 
