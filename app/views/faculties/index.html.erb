@@ -14,12 +14,10 @@
       <th>Id</th>
       <th>Last Name</th>
       <th>First Name</th>
-      <th>Birth</th>
-      <th>Death</th>
-      <th>Leave</th>
-      <th>Dept</th>
-      <th>Box</th>
-      <th>Series</th>
+      <th>Department</th>
+      <th>Death Date</th>
+      <th>Departure from University</th>
+      <th>Box Number</th>
       <% if user_signed_in? %>
       <th colspan="3"></th>
       <% end %>
@@ -32,12 +30,10 @@
         <td><%= faculty.id %></td>
         <td><%= faculty.lname %></td>
         <td><%= faculty.fname %></td>
-        <td><%= faculty.birth %></td>
+        <td><%= faculty.dept %></td>
         <td><%= faculty.death %></td>
         <td><%= faculty.leave %></td>
-        <td><%= faculty.dept %></td>
         <td><%= faculty.box %></td>
-        <td><%= faculty.series %></td>
         <% if user_signed_in? %>
         <td><%= link_to 'Show', faculty %></td>
         <td><%= link_to 'Edit', edit_faculty_path(faculty) %></td>
