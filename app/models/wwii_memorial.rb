@@ -6,6 +6,8 @@ class WwiiMemorial < ActiveRecord::Base
 
     params.except(:action, :controller).each do |k, v|
       if cols.include? k.downcase
+        #sanitize inputs to prevent sql injection
+				v.gsub!(/[";'']/, '"' => '', ';' => '', '\'' => '\\\'')
         q << "#{k} LIKE '%#{v}%'"
       end
     end

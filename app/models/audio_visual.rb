@@ -16,6 +16,8 @@ class AudioVisual < ActiveRecord::Base
 	  params.except(:action, :controller).each do |k, v|
 	  	if subjects.include? k.downcase
 	  		if !v.empty?
+					#sanitize inputs to prevent sql injection
+					v.gsub!(/[";'']/, '"' => '', ';' => '', '\'' => '\\\'')
 	  			cols.each do |x|
 	  				q << "#{x} LIKE '%#{v}%'"
 	  			end

@@ -3,7 +3,7 @@ class ArchboardsController < ApplicationController
 
   # GET /archboards
   # GET /archboards.json
-def index
+  def index
     if !params[:subject1].blank?
       @archboards = Archboard.search(params).page(params[:page])
     else

@@ -30,6 +30,8 @@ class Archboard < ActiveRecord::Base
 	  params.except(:action, :controller).each do |k, v|
 	  	if subjects.include? k.downcase
 	  		if !v.empty?
+					#sanitize inputs to prevent sql injection
+					v.gsub!(/[";'']/, '"' => '', ';' => '', '\'' => '\\\'')
 	  			cols.each do |x|
 	  				q << "#{x} LIKE '%#{v}%'"
 	  			end
@@ -37,7 +39,7 @@ class Archboard < ActiveRecord::Base
 	  			q = []
 	  		end
 	  	end
-	  	if operators.include? v.downcase  
+	  	if operators.include? v.downcase
 	  			o[k] = v.downcase
 	  	end
 	  end
@@ -53,7 +55,7 @@ class Archboard < ActiveRecord::Base
 	  query = w["subject1"] + q2 + q3
 
 	  where(query)
- 
+
 	end
 
 end
