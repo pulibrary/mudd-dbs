@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def rbsc_site
-    "http://rbscbeta.princeton.edu"
+    "http://rbsc-dev.princeton.edu"
   end
 
   def mudd_path
