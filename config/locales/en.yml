@@ -21,3 +21,12 @@
 
 en:
   hello: "Hello world"
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "No records found"
+          one: "Displaying <b>1</b> record"
+          other: "Displaying <b>all %{count}</b> records"
+      more_pages:
+        display_entries: "Displaying records <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total"

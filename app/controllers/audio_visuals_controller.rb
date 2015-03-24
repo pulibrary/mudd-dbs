@@ -4,7 +4,7 @@ class AudioVisualsController < ApplicationController
   # GET /audio_visuals
   # GET /audio_visuals.json
   def index
-    if params
+    if !params[:keyword1].blank?
       @audio_visuals = AudioVisual.search(params).page(params[:page])
     else
       @audio_visuals = AudioVisual.all.page(params[:page])

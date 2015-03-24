@@ -4,7 +4,7 @@ class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
   def index
-    if params
+    if !params[:subject1].blank?
       @photos = Photo.search(params).page(params[:page])
     else
       @photos = Photo.all.page(params[:page])

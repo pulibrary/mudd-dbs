@@ -8,7 +8,6 @@
   <table border=1 align="center" class="datatable">
     <thead>
       <tr>
-        <th>Access</th>
         <th>Subject</th>
         <th>Volume</th>
         <th>Page</th>
@@ -21,7 +20,6 @@
     <tbody>
       <% @trustees_minutes.each do |trustees_minute| %>
         <tr>
-          <td><%= trustees_minute.access_id %></td>
           <td><%= trustees_minute.subject %></td>
           <td><%= trustees_minute.volume %></td>
           <td><%= trustees_minute.page %></td>

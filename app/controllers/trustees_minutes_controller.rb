@@ -4,7 +4,7 @@ class TrusteesMinutesController < ApplicationController
   # GET /trustees_minutes
   # GET /trustees_minutes.json
   def index
-    if params
+    if !params[:subject1].blank?
       @trustees_minutes = TrusteesMinute.search(params).page(params[:page])
     else
       @trustees_minutes = TrusteesMinute.all.page(params[:page])
