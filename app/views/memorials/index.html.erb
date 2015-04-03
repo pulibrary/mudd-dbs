@@ -52,7 +52,14 @@
 <%= link_to 'New Memorial', new_memorial_path %>
 <% end %>
 
+<div class="pagination">
+  <%= page_entries_info @memorials %>
+  <%= paginate @memorials %>
+</div>
+
 <div style="width:100%; text-align:center;">
+<br>
+<%= link_to "View All Records", memorials_path %>
 <br>
 <%= link_to 'New Search', rbsc_site + "/databases/princeton-alumni-weekly-memorial-index-1894-2011" %>
 <br>

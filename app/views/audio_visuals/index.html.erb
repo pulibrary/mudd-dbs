@@ -58,7 +58,14 @@
 <%= link_to 'New Audio visual', new_audio_visual_path %>
 <% end %>
 
+<div class="pagination">
+  <%= page_entries_info @audio_visuals %>
+  <%= paginate @audio_visuals %>
+</div>
+
 <div style="width:100%; text-align:center;">
+<br>
+<%= link_to "View All Records", audio_visuals_path %>
 <br>
 <%= link_to 'New Search', rbsc_site + "/databases/princeton-university-historical-audio-visual-collection" %>
 <br>

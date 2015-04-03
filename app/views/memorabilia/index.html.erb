@@ -50,7 +50,14 @@
 <%= link_to 'New Memorabilium', new_memorabilium_path %>
 <% end %>
 
+<div class="pagination">
+  <%= page_entries_info @memorabilia %>
+  <%= paginate @memorabilia %>
+</div>
+
 <div style="width:100%; text-align:center;">
+<br>
+<%= link_to "View All Records", memorabilia_path %>
 <br>
 <%= link_to 'New Search', rbsc_site + "/databases/princeton-memorabilia-collection" %>
 <br>

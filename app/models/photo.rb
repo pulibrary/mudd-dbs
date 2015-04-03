@@ -6,7 +6,7 @@ class Photo < ActiveRecord::Base
     o = {}
     q2 = ""
     q3 = ""
-    subjects = ["subject1","subject2","subject3"]
+    subjects = ["subject1","subject2","subject3","division"]
     operators = ["and","or","xor"]
     cols = [ "image_type",
               "provenance",
@@ -45,7 +45,11 @@ class Photo < ActiveRecord::Base
       q3 = " " + o["operator2"] + " " + w["subject3"]
     end
 
-    query = w["subject1"] + q2 + q3
+    if !w["division"].blank?
+      q4 = " AND " + w["division"]
+    end
+
+    query = w["subject1"] + q2 + q3 + q4
 
     where(query)
 

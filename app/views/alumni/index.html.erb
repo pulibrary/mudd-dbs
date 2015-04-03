@@ -49,8 +49,14 @@
 <%= link_to 'New Alumn', new_alumn_path %>
 <% end %>
 
+<div class="pagination">
+  <%= page_entries_info @alumni %>
+  <%= paginate @alumni %>
+</div>
 
 <div style="width:100%; text-align:center;">
+<br>
+<%= link_to "View All Records", alumni_path %>
 <br>
 <%= link_to 'New Search', rbsc_site + "/databases/undergraduate-alumni-index-1748-1920" %>
 <br>

@@ -52,7 +52,15 @@
 <%= link_to 'New Graduate', new_graduate_path %>
 <% end %>
 
+<div class="pagination">
+  <%= page_entries_info @graduates %>
+  <%= paginate @graduates %>
+</div>
+
+
 <div style="width:100%; text-align:center;">
+<br>
+<%= link_to "View All Records", graduates_path %>
 <br>
 <%= link_to 'New Search', rbsc_site + "/databases/princeton-university-graduate-alumni-index-1839-1998" %>
 <br>

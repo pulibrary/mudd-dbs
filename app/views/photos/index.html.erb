@@ -67,7 +67,14 @@
 <%= link_to 'New Photo', new_photo_path %>
 <% end %>
 
+<div class="pagination">
+  <%= page_entries_info @photos %>
+  <%= paginate @photos %>
+</div>
+
 <div style="width:100%; text-align:center;">
+<br>
+<%= link_to "View All Records", photos_path %>
 <br>
 <%= link_to 'New Search', rbsc_site + "/databases/princeton-university-historical-photograph-collection" %>
 <br>

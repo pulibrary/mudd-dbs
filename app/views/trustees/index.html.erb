@@ -44,7 +44,14 @@
 <%= link_to 'New Trustee', new_trustee_path %>
 <% end %>
 
+<div class="pagination">
+  <%= page_entries_info @trustees %>
+  <%= paginate @trustees %>
+</div>
+
 <div style="width:100%; text-align:center;">
+<br>
+<%= link_to "View All Records", trustees_path %>
 <br>
 <%= link_to 'New Search', rbsc_site + "/databases/trustee-index-1746-2001" %>
 <br>

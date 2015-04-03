@@ -11,7 +11,6 @@
 <table border=1 align="center" class="datatable">
   <thead>
     <tr>
-      <th>Id</th>
       <th>Last Name</th>
       <th>First Name</th>
       <th>Department</th>
@@ -27,7 +26,6 @@
   <tbody>
     <% @faculties.each do |faculty| %>
       <tr>
-        <td><%= faculty.id %></td>
         <td><%= faculty.lname %></td>
         <td><%= faculty.fname %></td>
         <td><%= faculty.dept %></td>
@@ -50,7 +48,14 @@
 <%= link_to 'New Faculty', new_faculty_path %>
 <% end %>
 
+<div class="pagination">
+  <%= page_entries_info @faculties %>
+  <%= paginate @faculties %>
+</div>
+
 <div style="width:100%; text-align:center;">
+<br>
+<%= link_to "View All Records", faculties_path %>
 <br>
 <%= link_to 'New Search', rbsc_site + "/databases/faculty-and-professional-staff-index-1764-2006" %>
 <br>

@@ -41,8 +41,14 @@
 <% if user_signed_in? %>
 <%= link_to 'New Trustees minute', new_trustees_minute_path %>
 <% end %>
+<div class="pagination">
+  <%= page_entries_info @trustees_minutes %>
+  <%= paginate @trustees_minutes %>
+</div>
 
 <div style="width:100%; text-align:center;">
+<br>
+<%= link_to "View All Records", trustees_minutes_path %>
 <br>
 <%= link_to 'New Search', rbsc_site + "/databases/trustees-minutes-1746-1894" %>
 <br>

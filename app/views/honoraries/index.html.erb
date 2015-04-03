@@ -48,7 +48,14 @@
 <%= link_to 'New Honorary', new_honorary_path %>
 <% end %>
 
+<div class="pagination">
+  <%= page_entries_info @honoraries %>
+  <%= paginate @honoraries %>
+</div>
+
 <div style="width:100%; text-align:center;">
+<br>
+<%= link_to "View All Records", honoraries_path %>
 <br>
 <%= link_to 'New Search', rbsc_site + "/databases/honorary-degree-index-1748-2001" %>
 <br>

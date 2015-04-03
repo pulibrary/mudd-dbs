@@ -28,7 +28,6 @@
       <th>Contractor Type</th>
       <th>Firm Name</th>
       <th>Contractor Type</th>
-      <th>Building info sheet</th>
       <% if user_signed_in? %>
       <th colspan="3"></th>
       <% end %>
@@ -55,7 +54,6 @@
         <td><%= archboard.contractor2_type %></td>
         <td><%= archboard.contractor3_name %></td>
         <td><%= archboard.contractor3_type %></td>
-        <td><%= archboard.building_info_sheet %></td>
         <% if user_signed_in? %>
         <td><%= link_to 'Show', archboard %></td>
         <td><%= link_to 'Edit', edit_archboard_path(archboard) %></td>
@@ -72,7 +70,14 @@
 <%= link_to 'New Archboard', new_archboard_path %>
 <% end %>
 
+<div class="pagination">
+  <%= page_entries_info @archboards %>
+  <%= paginate @archboards %>
+</div>
+
 <div style="width:100%; text-align:center;">
+<br>
+<%= link_to "View All Records", archboards_path %>
 <br>
 <%= link_to 'New Search', rbsc_site + "/databases/architectural-presentation-boards" %>
 <br>

@@ -50,7 +50,14 @@
 <%= link_to 'New Nassau literature', new_nassau_literature_path %>
 <% end %>
 
+<div class="pagination">
+  <%= page_entries_info @nassau_literatures %>
+  <%= paginate @nassau_literatures %>
+</div>
+
 <div style="width:100%; text-align:center;">
+<br>
+<%= link_to "View All Records", nassau_literatures_path %>
 <br>
 <%= link_to 'New Search', rbsc_site + "/databases/nassau-literary-magazine-index-1842-1942" %>
 <br>

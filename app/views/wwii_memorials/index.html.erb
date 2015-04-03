@@ -44,7 +44,14 @@
 <%= link_to 'New Wwii memorial', new_wwii_memorial_path %>
 <% end %>
 
+<div class="pagination">
+  <%= page_entries_info @wwii_memorials %>
+  <%= paginate @wwii_memorials %>
+</div>
+
 <div style="width:100%; text-align:center;">
+<br>
+<%= link_to "View All Records", wwii_memorials_path %>
 <br>
 <%= link_to 'New Search', rbsc_site + "/databases/world-war-ii-memorial-book" %>
 <br>
