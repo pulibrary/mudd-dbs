@@ -31,7 +31,11 @@ gem "fast_seeder"
 
 gem "smarter_csv"
 
+gem "twitter-bootstrap-rails"
+
 gem 'kaminari'
+gem 'bootstrap-kaminari-views'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

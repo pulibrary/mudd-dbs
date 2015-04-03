@@ -1,11 +1,18 @@
+<div style="margin-bottom:50px" class="container">
+<p id="notice"><%= notice %></p>
+
 <center><h1>Trustees Minutes, 1746-1894</h1></center>
 
-<div class="pagination">
-  <%= page_entries_info @trustees_minutes %>
-  <%= paginate @trustees_minutes %>
+<div class="center-block">
+  <div style="display:block" class="pagination">
+    <%= page_entries_info @trustees_minutes %><br>
+    <%= paginate @trustees_minutes, :theme => 'twitter-bootstrap-3' %>
+  </div>
 </div>
+
+
 <% if !@trustees_minutes.blank? %>
-  <table border=1 align="center" class="datatable">
+  <table align="center" class="table table-striped">
     <thead>
       <tr>
         <th>Subject</th>
@@ -41,16 +48,17 @@
 <% if user_signed_in? %>
 <%= link_to 'New Trustees minute', new_trustees_minute_path %>
 <% end %>
-<div class="pagination">
-  <%= page_entries_info @trustees_minutes %>
-  <%= paginate @trustees_minutes %>
+
+<div class="center-block">
+  <div style="display:block" class="pagination">
+    <%= page_entries_info @trustees_minutes %><br>
+    <%= paginate @trustees_minutes, :theme => 'twitter-bootstrap-3' %>
+  </div>
 </div>
 
 <div style="width:100%; text-align:center;">
-<br>
-<%= link_to "View All Records", trustees_minutes_path %>
-<br>
-<%= link_to 'New Search', rbsc_site + "/databases/trustees-minutes-1746-1894" %>
-<br>
-<%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path %>
+<%= link_to "View All Records", trustees_minutes_path, class: "btn btn-default" %>
+<%= link_to 'New Search', rbsc_site + "/databases/trustees-minutes-1746-1894", class: "btn btn-default" %>
+<%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path, class: "btn btn-default" %>
+</div>
 </div>

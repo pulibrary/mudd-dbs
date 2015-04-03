@@ -12,12 +12,9 @@
  *= require_tree .
  */
 
-.datatable td {
-	padding:5px;
-}
-
-.pagination {
-	width:100%;
-	text-align:center;
-	margin-bottom:10px;
-}
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  }

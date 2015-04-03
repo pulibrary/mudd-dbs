@@ -1,14 +1,17 @@
+<div style="margin-bottom:50px" class="container">
 <p id="notice"><%= notice %></p>
 
 <center><h1>Architectural Presentation Boards</h1></center>
 
-<div class="pagination">
-  <%= page_entries_info @archboards %>
-  <%= paginate @archboards %>
+<div class="center-block">
+  <div style="display:block" class="pagination">
+    <%= page_entries_info @archboards %><br>
+    <%= paginate @archboards, :theme => 'twitter-bootstrap-3' %>
+  </div>
 </div>
 
 <% if !@archboards.blank? %>
-<table border=1 align="center" class="datatable">
+<table align="center" class="table table-striped">
   <thead>
     <tr>
       <th>Numbers assigned</th>
@@ -70,16 +73,16 @@
 <%= link_to 'New Archboard', new_archboard_path %>
 <% end %>
 
-<div class="pagination">
-  <%= page_entries_info @archboards %>
-  <%= paginate @archboards %>
+<div class="center-block">
+  <div style="display:block" class="pagination">
+    <%= page_entries_info @archboards %><br>
+    <%= paginate @archboards, :theme => 'twitter-bootstrap-3' %>
+  </div>
 </div>
 
 <div style="width:100%; text-align:center;">
-<br>
-<%= link_to "View All Records", archboards_path %>
-<br>
-<%= link_to 'New Search', rbsc_site + "/databases/architectural-presentation-boards" %>
-<br>
-<%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path %>
+<%= link_to "View All Records", archboards_path, class: "btn btn-default" %>
+<%= link_to 'New Search', rbsc_site + "/databases/architectural-presentation-boards", class: "btn btn-default" %>
+<%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path, class: "btn btn-default" %>
+</div>
 </div>

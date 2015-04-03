@@ -40,7 +40,7 @@ class AudioVisual < ActiveRecord::Base
 
 	  query = w["keyword1"] + q2 + q3
 
-	  where(query)
+	  where(query).order(:box,:item)
 
 	end
 

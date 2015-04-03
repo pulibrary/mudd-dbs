@@ -13,7 +13,7 @@ class Alumn < ActiveRecord::Base
 	  	end
 	  end
 
-  	  where(q.join(" AND "))
+  	  where(q.join(" AND ")).order(:lname)
 
 	end
 

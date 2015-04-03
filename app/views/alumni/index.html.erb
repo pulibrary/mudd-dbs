@@ -1,13 +1,16 @@
+<div style="margin-bottom:50px" class="container">
 <p id="notice"><%= notice %></p>
 
 <center><h1>Princeton Undergraduate Alumni Index, 1748-1920</h1></center>
 
-<div class="pagination">
-  <%= page_entries_info @alumni %>
-  <%= paginate @alumni %>
+<div class="center-block">
+  <div style="display:block" class="pagination">
+    <%= page_entries_info @alumni %><br>
+    <%= paginate @alumni, :theme => 'twitter-bootstrap-3' %>
+  </div>
 </div>
 
-<table border=1 align="center" class="datatable">
+<table align="center" class="table table-striped">
   <thead>
     <tr>
       <th>Box</th>
@@ -49,16 +52,16 @@
 <%= link_to 'New Alumn', new_alumn_path %>
 <% end %>
 
-<div class="pagination">
-  <%= page_entries_info @alumni %>
-  <%= paginate @alumni %>
+<div class="center-block">
+  <div style="display:block" class="pagination">
+    <%= page_entries_info @alumni %><br>
+    <%= paginate @alumni, :theme => 'twitter-bootstrap-3' %>
+  </div>
 </div>
 
 <div style="width:100%; text-align:center;">
-<br>
-<%= link_to "View All Records", alumni_path %>
-<br>
-<%= link_to 'New Search', rbsc_site + "/databases/undergraduate-alumni-index-1748-1920" %>
-<br>
-<%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path %>
+<%= link_to "View All Records", alumni_path, class: "btn btn-default" %>
+<%= link_to 'New Search', rbsc_site + "/databases/undergraduate-alumni-index-1748-1920", class: "btn btn-default" %>
+<%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path, class: "btn btn-default" %>
+</div>
 </div>

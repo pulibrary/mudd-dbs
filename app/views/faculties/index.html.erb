@@ -1,14 +1,17 @@
+<div style="margin-bottom:50px" class="container">
 <p id="notice"><%= notice %></p>
 
 <center><h1>Faculty and Professional Staff Index, 1764-2006</h1></center>
 
-<div class="pagination">
-  <%= page_entries_info @faculties %>
-  <%= paginate @faculties %>
+<div class="center-block">
+  <div style="display:block" class="pagination">
+    <%= page_entries_info @faculties %><br>
+    <%= paginate @faculties, :theme => 'twitter-bootstrap-3' %>
+  </div>
 </div>
 
 <% if !@faculties.blank? %>
-<table border=1 align="center" class="datatable">
+<table align="center" class="table table-striped">
   <thead>
     <tr>
       <th>Last Name</th>
@@ -48,16 +51,16 @@
 <%= link_to 'New Faculty', new_faculty_path %>
 <% end %>
 
-<div class="pagination">
-  <%= page_entries_info @faculties %>
-  <%= paginate @faculties %>
+<div class="center-block">
+  <div style="display:block" class="pagination">
+    <%= page_entries_info @faculties %><br>
+    <%= paginate @faculties, :theme => 'twitter-bootstrap-3' %>
+  </div>
 </div>
 
 <div style="width:100%; text-align:center;">
-<br>
-<%= link_to "View All Records", faculties_path %>
-<br>
-<%= link_to 'New Search', rbsc_site + "/databases/faculty-and-professional-staff-index-1764-2006" %>
-<br>
-<%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path %>
+<%= link_to "View All Records", faculties_path, class: "btn btn-default" %>
+<%= link_to 'New Search', rbsc_site + "/databases/faculty-and-professional-staff-index-1764-2006", class: "btn btn-default" %>
+<%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path, class: "btn btn-default" %>
+</div>
 </div>
