@@ -308,17 +308,17 @@ def reset_photos
   puts "photos loaded!"
 end
 
-#reset_alumni
-#reset_newalumni
-#reset_archboards
-#reset_audiovisuals
-#reset_graduates
-#reset_honoraries
+reset_alumni
+reset_newalumni
+reset_archboards
+reset_audiovisuals
+reset_graduates
+reset_honoraries
 reset_memorabilia
-#reset_faculties
-#reset_trustees_minutes
-#reset_nassau_literatures
-#reset_memorials
-#reset_trustees
-#reset_wwii_memorials
-#reset_photos
+reset_faculties
+reset_trustees_minutes
+reset_nassau_literatures
+reset_memorials
+reset_trustees
+reset_wwii_memorials
+reset_photos
