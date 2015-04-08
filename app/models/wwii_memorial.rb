@@ -2,7 +2,7 @@ class WwiiMemorial < ActiveRecord::Base
 
   def self.search(params)
     q = Array.new
-    cols = [ "rank","name","death_date","place","year" ]
+    cols = [ "rank","name","death_year","place","year" ]
 
     params.except(:action, :controller).each do |k, v|
       if cols.include? k.downcase
