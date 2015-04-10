@@ -2,15 +2,20 @@ class AudioVisual < ActiveRecord::Base
 
 	def self.search(params)
 	  w = {}
+	  w["keyword1"] = "1 = 1"
 	  q = []
 	  o = {}
 	  q2 = ""
 	  q3 = ""
+	  q4 = ""
+      q5 = ""
+      q6 = ""
 	  subjects = ["keyword1","keyword2","keyword3"]
 	  operators = ["and","or","xor"]
 	  cols = [ "title",
 	  		   "creator",
-	  		   "notes"
+	  		   "notes",
+	  		   ""
 	  		  ]
 
 	  params.except(:action, :controller).each do |k, v|
@@ -38,7 +43,25 @@ class AudioVisual < ActiveRecord::Base
 	  	q3 = " " + o["operator2"] + " " + w["keyword3"]
 	  end
 
-	  query = w["keyword1"] + q2 + q3
+    if !params[:topic].blank?
+      v = params[:topic]
+      v.gsub!(/[";'']/, '"' => '', ';' => '', '\'' => '\\\'')
+      q4 = " AND topic LIKE '%#{v}%'"
+    end
+
+    if !params[:format].blank?
+      v = params[:format]
+      v.gsub!(/[";'']/, '"' => '', ';' => '', '\'' => '\\\'')
+      q5 = " AND format LIKE '%#{v}%'"
+    end
+
+    if !params[:year].blank?
+      v = params[:year]
+      v.gsub!(/[";'']/, '"' => '', ';' => '', '\'' => '\\\'')
+      q6 = " AND year LIKE '%#{v}%'"
+    end
+
+	  query = w["keyword1"] + q2 + q3 + q4 + q5 + q6
 
 	  where(query).order(:box,:item)
 
