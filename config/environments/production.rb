@@ -80,7 +80,8 @@ Alumni::Application.configure do
 
 
   # Mail settings
-  config.action_mailer.default_url_options = { host: 'libruby-prod.princeton.edu' }
+  config.action_mailer.default_url_options = { host: 'rbsc.princeton.edu', only_path: false,
+    script_name: '/mudd-dbs' }
     # use mail relay per John K. 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
