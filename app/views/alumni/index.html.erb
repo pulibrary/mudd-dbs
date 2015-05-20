@@ -1,4 +1,7 @@
 <div style="margin-bottom:50px" class="container">
+<% if user_signed_in? %>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => 'btn btn-warning pull-right') %>
+<% end %>
 <p id="notice"><%= notice %></p>
 
 <center><h1>Princeton Undergraduate Alumni Index, 1748-1920</h1></center>
@@ -41,7 +44,7 @@
         <% if user_signed_in? %>
         <td><%= link_to 'Show', alumn %></td>
         <td><%= link_to 'Edit', edit_alumn_path(alumn) %></td>
-        <td><%= link_to 'Destroy', alumn, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', alumn, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %></td>
         <% end %>
       </tr>
     <% end %>

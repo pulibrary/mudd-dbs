@@ -18,3 +18,7 @@
   margin-right: auto;
   text-align: center;
   }
+
+.pull-right {
+  float:right;
+}
