@@ -1,4 +1,7 @@
 <div style="margin-bottom:50px" class="container">
+<% if user_signed_in? %>
+  <%= button_to('Logout', destroy_user_session_path, :method => :delete, :class => 'btn btn-primary pull-right') %>
+<% end %>
 <p id="notice"><%= notice %></p>
 
 <center><h1>Nassau Literary Magazine Index, 1842-1942</h1></center>
@@ -38,9 +41,9 @@
         <td><%= nassau_literature.issue_no %></td>
         <td><%= nassau_literature.pages %></td>
         <% if user_signed_in? %>
-        <td><%= link_to 'Show', nassau_literature %></td>
-        <td><%= link_to 'Edit', edit_nassau_literature_path(nassau_literature) %></td>
-        <td><%= link_to 'Destroy', nassau_literature, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Show', nassau_literature, method: :get, class: 'btn btn-xs btn-info' %></td>
+        <td><%= button_to 'Edit', edit_nassau_literature_path(nassau_literature), method: :get, class: 'btn btn-xs btn-warning' %></td>
+        <td><%= button_to 'Destroy', nassau_literature, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %></td>
         <% end %>
       </tr>
     <% end %>
@@ -50,7 +53,7 @@
 
 <br>
 <% if user_signed_in? %>
-<%= link_to 'New Nassau literature', new_nassau_literature_path %>
+<%= button_to 'New Nassau literature', new_nassau_literature_path, method: :get, class: 'btn btn-success' %>
 <% end %>
 
 <div class="center-block">

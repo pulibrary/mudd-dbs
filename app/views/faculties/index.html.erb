@@ -1,4 +1,7 @@
 <div style="margin-bottom:50px" class="container">
+<% if user_signed_in? %>
+  <%= button_to('Logout', destroy_user_session_path, :method => :delete, :class => 'btn btn-primary pull-right') %>
+<% end %>
 <p id="notice"><%= notice %></p>
 
 <center><h1>Faculty and Professional Staff Index, 1764-2006</h1></center>
@@ -36,9 +39,9 @@
         <td><%= faculty.leave %></td>
         <td><%= faculty.box %></td>
         <% if user_signed_in? %>
-        <td><%= link_to 'Show', faculty %></td>
-        <td><%= link_to 'Edit', edit_faculty_path(faculty) %></td>
-        <td><%= link_to 'Destroy', faculty, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Show', faculty, method: :get, class: 'btn btn-xs btn-info' %></td>
+        <td><%= button_to 'Edit', edit_faculty_path(faculty), method: :get, class: 'btn btn-xs btn-warning' %></td>
+        <td><%= button_to 'Destroy', faculty, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %></td>
         <% end %>
       </tr>
     <% end %>
@@ -48,7 +51,7 @@
 
 <br>
 <% if user_signed_in? %>
-<%= link_to 'New Faculty', new_faculty_path %>
+<%= button_to 'New Faculty', new_faculty_path, method: :get, class: 'btn btn-success' %>
 <% end %>
 
 <div class="center-block">

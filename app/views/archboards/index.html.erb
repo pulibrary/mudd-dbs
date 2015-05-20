@@ -1,4 +1,7 @@
 <div style="margin-bottom:50px" class="container">
+<% if user_signed_in? %>
+  <%= button_to('Logout', destroy_user_session_path, :method => :delete, :class => 'btn btn-primary pull-right') %>
+<% end %>
 <p id="notice"><%= notice %></p>
 
 <center><h1>Architectural Presentation Boards</h1></center>
@@ -58,9 +61,9 @@
         <td><%= archboard.contractor3_name %></td>
         <td><%= archboard.contractor3_type %></td>
         <% if user_signed_in? %>
-        <td><%= link_to 'Show', archboard %></td>
-        <td><%= link_to 'Edit', edit_archboard_path(archboard) %></td>
-        <td><%= link_to 'Destroy', archboard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Show', archboard, method: :get, class: 'btn btn-xs btn-info' %></td>
+        <td><%= button_to 'Edit', edit_archboard_path(archboard), method: :get, class: 'btn btn-xs btn-warning' %></td>
+        <td><%= button_to 'Destroy', archboard, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %></td>
         <% end %>
       </tr>
     <% end %>
@@ -70,7 +73,7 @@
 
 <br>
 <% if user_signed_in? %>
-<%= link_to 'New Archboard', new_archboard_path %>
+<%= button_to 'New Archboard', new_archboard_path, method: :get, class: 'btn btn-success' %>
 <% end %>
 
 <div class="center-block">

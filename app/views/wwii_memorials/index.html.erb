@@ -1,4 +1,7 @@
 <div style="margin-bottom:50px" class="container">
+<% if user_signed_in? %>
+  <%= button_to('Logout', destroy_user_session_path, :method => :delete, :class => 'btn btn-primary pull-right') %>
+<% end %>
 <p id="notice"><%= notice %></p>
 
 <center><h1>World War II Memorial Book</h1></center>
@@ -34,9 +37,9 @@
         <td><%= wwii_memorial.place %></td>
         <td><%= wwii_memorial.year %></td>
         <% if user_signed_in? %>
-        <td><%= link_to 'Show', wwii_memorial %></td>
-        <td><%= link_to 'Edit', edit_wwii_memorial_path(wwii_memorial) %></td>
-        <td><%= link_to 'Destroy', wwii_memorial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Show', wwii_memorial, method: :get, class: 'btn btn-xs btn-info' %></td>
+        <td><%= button_to 'Edit', edit_wwii_memorial_path(wwii_memorial), method: :get, class: 'btn btn-xs btn-warning' %></td>
+        <td><%= button_to 'Destroy', wwii_memorial, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %></td>
         <% end %>
       </tr>
     <% end %>
@@ -46,7 +49,7 @@
 
 <br>
 <% if user_signed_in? %>
-<%= link_to 'New Wwii memorial', new_wwii_memorial_path %>
+<%= button_to 'New Wwii memorial', new_wwii_memorial_path, method: :get, class: 'btn btn-success' %>
 <% end %>
 
 <div class="center-block">

@@ -1,4 +1,7 @@
 <div style="margin-bottom:50px" class="container">
+<% if user_signed_in? %>
+  <%= button_to('Logout', destroy_user_session_path, :method => :delete, :class => 'btn btn-primary pull-right') %>
+<% end %>
 <p id="notice"><%= notice %></p>
 
 <center><h1>Princeton Undergraduate Alumni Index, 1921-2005</h1></center>
@@ -34,9 +37,9 @@
         <td><%= new_alumn.pubfile %></td>
         <td><%= new_alumn.academicfile %></td>
         <% if user_signed_in? %>
-        <td><%= link_to 'Show', new_alumn %></td>
-        <td><%= link_to 'Edit', edit_new_alumn_path(new_alumn) %></td>
-        <td><%= link_to 'Destroy', new_alumn, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Show', new_alumn, method: :get, class: 'btn btn-xs btn-info' %></td>
+        <td><%= button_to 'Edit', edit_new_alumn_path(new_alumn), method: :get, class: 'btn btn-xs btn-warning' %></td>
+        <td><%= button_to 'Destroy', new_alumn, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %></td>
         <% end %>
       </tr>
     <% end %>
@@ -46,7 +49,7 @@
 
 <br>
 <% if user_signed_in? %>
-<%= link_to 'New New alumn', new_new_alumn_path %>
+<%= button_to 'New New alumn', new_new_alumn_path, method: :get, class: 'btn btn-success' %>
 <% end %>
 
 <div class="center-block">

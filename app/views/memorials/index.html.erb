@@ -1,4 +1,7 @@
 <div style="margin-bottom:50px" class="container">
+<% if user_signed_in? %>
+  <%= button_to('Logout', destroy_user_session_path, :method => :delete, :class => 'btn btn-primary pull-right') %>
+<% end %>
 <p id="notice"><%= notice %></p>
 
 <center><h1>Princeton Alumni Weekly Memorial Index, 1894-2011</h1></center>
@@ -40,9 +43,9 @@
         <td><%= memorial.publish_date %></td>
         <td><%= memorial.page %></td>
         <% if user_signed_in? %>
-        <td><%= link_to 'Show', memorial %></td>
-        <td><%= link_to 'Edit', edit_memorial_path(memorial) %></td>
-        <td><%= link_to 'Destroy', memorial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Show', memorial, method: :get, class: 'btn btn-xs btn-info' %></td>
+        <td><%= button_to 'Edit', edit_memorial_path(memorial), method: :get, class: 'btn btn-xs btn-warning' %></td>
+        <td><%= button_to 'Destroy', memorial, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %></td>
         <% end %>
       </tr>
     <% end %>
@@ -52,7 +55,7 @@
 <br>
 
 <% if user_signed_in? %>
-<%= link_to 'New Memorial', new_memorial_path %>
+<%= button_to 'New Memorial', new_memorial_path, method: :get, class: 'btn btn-success' %>
 <% end %>
 
 <div class="center-block">

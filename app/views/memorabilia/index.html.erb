@@ -1,4 +1,7 @@
 <div style="margin-bottom:50px" class="container">
+<% if user_signed_in? %>
+  <%= button_to('Logout', destroy_user_session_path, :method => :delete, :class => 'btn btn-primary pull-right') %>
+<% end %>
 <p id="notice"><%= notice %></p>
 
 <center><h1>Princeton Memorabilia Collection</h1></center>
@@ -38,9 +41,9 @@
         <td><%= memorabilium.reunion %></td>
         <td><%= memorabilium.provenance %></td>
         <% if user_signed_in? %>
-        <td><%= link_to 'Show', memorabilium %></td>
-        <td><%= link_to 'Edit', edit_memorabilium_path(memorabilium) %></td>
-        <td><%= link_to 'Destroy', memorabilium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Show', memorabilium, method: :get, class: 'btn btn-xs btn-info' %></td>
+        <td><%= button_to 'Edit', edit_memorabilium_path(memorabilium), method: :get, class: 'btn btn-xs btn-warning' %></td>
+        <td><%= button_to 'Destroy', memorabilium, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %></td>
         <% end %>
       </tr>
     <% end %>
@@ -50,7 +53,7 @@
 
 <br>
 <% if user_signed_in? %>
-<%= link_to 'New Memorabilium', new_memorabilium_path %>
+<%= button_to 'New Memorabilium', new_memorabilium_path, method: :get, class: 'btn btn-success' %>
 <% end %>
 
 <div class="center-block">

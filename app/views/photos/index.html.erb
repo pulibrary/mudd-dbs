@@ -1,4 +1,7 @@
 <div style="margin-bottom:50px" class="container">
+<% if user_signed_in? %>
+  <%= button_to('Logout', destroy_user_session_path, :method => :delete, :class => 'btn btn-primary pull-right') %>
+<% end %>
 <p id="notice"><%= notice %></p>
 
 <center><h1>Princeton University Historical Photograph Collection</h1></center>
@@ -56,9 +59,9 @@
         <td><%= photo.provenance %></td>
         <td><%= photo.online_image %></td>
         <% if user_signed_in? %>
-        <td><%= link_to 'Show', photo %></td>
-        <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-        <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Show', photo, method: :get, class: 'btn btn-xs btn-info' %></td>
+        <td><%= button_to 'Edit', edit_photo_path(photo), method: :get, class: 'btn btn-xs btn-warning' %></td>
+        <td><%= button_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %></td>
         <% end %>
       </tr>
     <% end %>
@@ -68,7 +71,7 @@
 
 <br>
 <% if user_signed_in? %>
-<%= link_to 'New Photo', new_photo_path %>
+<%= button_to 'New Photo', new_photo_path, method: :get, class: 'btn btn-success' %>
 <% end %>
 
 <div class="center-block">

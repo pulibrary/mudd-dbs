@@ -1,4 +1,7 @@
 <div style="margin-bottom:50px" class="container">
+<% if user_signed_in? %>
+  <%= button_to('Logout', destroy_user_session_path, :method => :delete, :class => 'btn btn-primary pull-right') %>
+<% end %>
 <p id="notice"><%= notice %></p>
 
 <center><h1>Princeton University Graduate Alumni Index, 1839-1998</h1></center>
@@ -40,9 +43,9 @@
         <td><%= graduate.photos %></td>
         <td><%= graduate.oversize %></td>
         <% if user_signed_in? %>
-        <td><%= link_to 'Show', graduate %></td>
-        <td><%= link_to 'Edit', edit_graduate_path(graduate) %></td>
-        <td><%= link_to 'Destroy', graduate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Show', graduate, method: :get, class: 'btn btn-xs btn-info' %></td>
+        <td><%= button_to 'Edit', edit_graduate_path(graduate), method: :get, class: 'btn btn-xs btn-warning' %></td>
+        <td><%= button_to 'Destroy', graduate, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %></td>
         <% end %>
       </tr>
     <% end %>
@@ -52,7 +55,7 @@
 
 <br>
 <% if user_signed_in? %>
-<%= link_to 'New Graduate', new_graduate_path %>
+<%= button_to 'New Graduate', new_graduate_path, method: :get, class: 'btn btn-success' %>
 <% end %>
 
 <div class="center-block">
