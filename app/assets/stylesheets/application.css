@@ -22,3 +22,7 @@
 .pull-right {
   float:right;
 }
+
+a:visited .btn{
+    color: white;
+}
