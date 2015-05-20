@@ -1,9 +1,6 @@
 <div style="margin-bottom:50px" class="container">
 <% if user_signed_in? %>
-  <p>I'm in!</p>
   <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => 'btn btn-warning pull-right') %>
-  <%= link_to 'Edit account', edit_user_registration_path %>
-  <%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %>
 <% end %>
 <p id="notice"><%= notice %></p>
 
