@@ -23,6 +23,6 @@
   float:right;
 }
 
-a:visited {
+.container a:visited {
     color: white;
 }
