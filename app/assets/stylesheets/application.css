@@ -26,3 +26,7 @@
 .container a:visited {
     color: white;
 }
+
+.pagination a:visited {
+    color: #428bca;
+}
