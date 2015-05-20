@@ -22,11 +22,3 @@
 .pull-right {
   float:right;
 }
-
-.container a:visited {
-    color: white;
-}
-
-.pagination a:visited {
-    color: #428bca;
-}
