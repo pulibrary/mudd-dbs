@@ -80,6 +80,12 @@ Alumni::Application.configure do
 
 
   # Mail settings
-  config.action_mailer.default_url_options = { host: 'libruby-prod.princeton.edu' }
+  # config.action_mailer.default_url_options = { host: 'localhost' }
+    # use mail relay per John K. 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'dss.princeton.edu',
+    from:                 'no_reply@libruby-prod.princeton.edu',
+  }
 
 end
