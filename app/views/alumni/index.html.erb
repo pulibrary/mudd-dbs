@@ -1,6 +1,6 @@
 <div style="margin-bottom:50px" class="container">
 <% if user_signed_in? %>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => 'btn btn-warning pull-right') %>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => 'btn btn-primary pull-right') %>
 <% end %>
 <p id="notice"><%= notice %></p>
 
@@ -42,8 +42,8 @@
         <td><%= alumn.photos %></td>
         <td><%= alumn.oversize %></td>
         <% if user_signed_in? %>
-        <td><%= link_to 'Show', alumn %></td>
-        <td><%= link_to 'Edit', edit_alumn_path(alumn) %></td>
+        <td><%= link_to 'Show', alumn, class: 'btn btn-xs btn-info' %></td>
+        <td><%= link_to 'Edit', edit_alumn_path(alumn), class: 'btn btn-xs btn-warning' %></td>
         <td><%= link_to 'Destroy', alumn, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %></td>
         <% end %>
       </tr>
@@ -52,7 +52,7 @@
 </table>
 <br>
 <% if user_signed_in? %>
-<%= link_to 'New Alumn', new_alumn_path %>
+<%= link_to 'New Alumn', new_alumn_path, class: 'btn btn-success' %>
 <% end %>
 
 <div class="center-block">
