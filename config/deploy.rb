@@ -1,12 +1,11 @@
 # config valid only for current version of Capistrano
-lock '3.3.5'
 
 set :application, 'mudd'
 set :repo_url, 'git@github.com:pulibrary/mudd-dbs.git'
 set :branch, 'master'
 
 # Default branch is :master
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/opt/mudd-dbs'
