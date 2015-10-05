@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # Seeding from CSV file placed in the db/seeds directory:
-
+=begin
 def delete_alumni
   puts "deleting alumni..."
   Alumn.delete_all
@@ -24,7 +24,7 @@ def reset_alumni
   puts "!"
   puts "alumni loaded!"
 end
-
+=end
 def delete_newalumni
   puts "deleting newalumni..."
   NewAlumn.delete_all
@@ -41,7 +41,7 @@ def reset_newalumni
   puts "!"
   puts "newalumni loaded!"
 end
-
+=begin
 def delete_archboards
   puts "deleting archboards..."
   Archboard.delete_all
@@ -309,7 +309,9 @@ def reset_photos
 end
 
 reset_alumni
+=end
 reset_newalumni
+=begin
 reset_archboards
 reset_audiovisuals
 reset_graduates
@@ -322,3 +324,4 @@ reset_memorials
 reset_trustees
 reset_wwii_memorials
 reset_photos
+=end
