@@ -6,7 +6,7 @@
 
 set :stage, :production
 set :rails_env, 'production'
-
+set :passenger_restart_with_touch, true
 
 # Extended Server Syntax
 # ======================
