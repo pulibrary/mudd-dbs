@@ -1,29 +1,5 @@
 Alumni::Application.routes.draw do
 
-  resources :photos
-
-  resources :wwii_memorials
-
-  resources :trustees
-
-  resources :memorials
-
-  resources :nassau_literatures
-
-  resources :trustees_minutes
-
-  resources :faculties
-
-  resources :memorabilia
-
-  resources :honoraries
-
-  resources :graduates
-
-  resources :audio_visuals
-
-  resources :archboards
-
   devise_for :users
   root to: "alumni#index"
   #resources :alumni
@@ -31,9 +7,45 @@ Alumni::Application.routes.draw do
   authenticate :user do
     resources :alumni, only: [:show, :new, :create, :edit, :update, :destroy]
     resources :new_alumni, only: [:show, :new, :create, :edit, :update, :destroy]
+    resources :photos, only: [:show, :new, :create, :edit, :update, :destroy]
+    resources :wwii_memorials, only: [:show, :new, :create, :edit, :update, :destroy]
+    resources :trustees, only: [:show, :new, :create, :edit, :update, :destroy]
+    resources :memorials, only: [:show, :new, :create, :edit, :update, :destroy]
+    resources :nassau_literatures, only: [:show, :new, :create, :edit, :update, :destroy]
+    resources :trustees_minutes, only: [:show, :new, :create, :edit, :update, :destroy]
+    resources :faculties, only: [:show, :new, :create, :edit, :update, :destroy]
+    resources :memorabilia, only: [:show, :new, :create, :edit, :update, :destroy]
+    resources :honoraries, only: [:show, :new, :create, :edit, :update, :destroy]
+    resources :graduates, only: [:show, :new, :create, :edit, :update, :destroy]
+    resources :audio_visuals, only: [:show, :new, :create, :edit, :update, :destroy]
+    resources :archboards, only: [:show, :new, :create, :edit, :update, :destroy]
   end
   resources :alumni, only: [:index]
   resources :new_alumni, only: [:index]
+
+  resources :photos, only: [:index]
+
+  resources :wwii_memorials, only: [:index]
+
+  resources :trustees, only: [:index]
+
+  resources :memorials, only: [:index]
+
+  resources :nassau_literatures, only: [:index]
+
+  resources :trustees_minutes, only: [:index]
+
+  resources :faculties, only: [:index]
+
+  resources :memorabilia, only: [:index]
+
+  resources :honoraries, only: [:index]
+
+  resources :graduates, only: [:index]
+
+  resources :audio_visuals, only: [:index]
+
+  resources :archboards, only: [:index]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
