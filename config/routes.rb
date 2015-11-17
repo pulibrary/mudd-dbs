@@ -6,7 +6,8 @@ Alumni::Application.routes.draw do
 
   authenticate :user do
     resources :alumni, only: [:show, :new, :create, :edit, :update, :destroy]
-    resources :new_alumni, only: [:show, :new, :create, :edit, :update, :destroy]
+    resources :recent_alumni, only: [:show, :new, :create, :edit, :update, :destroy]
+    get 'exit', to: 'sessions#destroy', as: :logout
     resources :photos, only: [:show, :new, :create, :edit, :update, :destroy]
     resources :wwii_memorials, only: [:show, :new, :create, :edit, :update, :destroy]
     resources :trustees, only: [:show, :new, :create, :edit, :update, :destroy]
@@ -21,7 +22,7 @@ Alumni::Application.routes.draw do
     resources :archboards, only: [:show, :new, :create, :edit, :update, :destroy]
   end
   resources :alumni, only: [:index]
-  resources :new_alumni, only: [:index]
+  resources :recent_alumni, only: [:index]
 
   resources :photos, only: [:index]
 

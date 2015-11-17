@@ -1,0 +1,67 @@
+<div style="margin-bottom:50px" class="container">
+<% if user_signed_in? %>
+  <%= button_to('Logout', destroy_user_session_path, :method => :delete, :class => 'btn btn-primary pull-right') %>
+<% end %>
+<p id="notice"><%= notice %></p>
+
+<center><h1>Princeton Undergraduate Alumni Index, 1921-2012</h1></center>
+
+<div class="center-block">
+  <div style="display:block" class="pagination">
+    <%= page_entries_info @recent_alumni %><br>
+    <%= paginate @recent_alumni, :theme => 'twitter-bootstrap-3' %>
+  </div>
+</div>
+
+<% if !@recent_alumni.blank? %>
+<table align="center" class="table table-striped">
+  <thead>
+    <tr>
+      <th>Last Name</th>
+      <th>First Name</th>
+      <th>Class</th>
+      <th>Public File</th>
+      <th>Academic File</th>
+      <% if user_signed_in? %>
+      <th colspan="3"></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recent_alumni.each do |recent_alumn| %>
+      <tr>
+        <td><%= recent_alumn.lname %></td>
+        <td><%= recent_alumn.fname %></td>
+        <td><%= recent_alumn.year %></td>
+        <td><%= recent_alumn.pubfile %></td>
+        <td><%= recent_alumn.academicfile %></td>
+        <% if user_signed_in? %>
+        <td><%= button_to 'Show', recent_alumn, method: :get, class: 'btn btn-xs btn-info' %></td>
+        <td><%= button_to 'Edit', edit_recent_alumn_path(recent_alumn), method: :get, class: 'btn btn-xs btn-warning' %></td>
+        <td><%= button_to 'Destroy', recent_alumn, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger' %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+
+<br>
+<% if user_signed_in? %>
+<%= button_to 'New New alumn', new_recent_alumn_path, method: :get, class: 'btn btn-success' %>
+<% end %>
+
+<div class="center-block">
+  <div style="display:block" class="pagination">
+    <%= page_entries_info @recent_alumni %><br>
+    <%= paginate @recent_alumni, :theme => 'twitter-bootstrap-3' %>
+  </div>
+</div>
+
+<div style="width:100%; text-align:center;">
+<%= link_to "View All Records", recent_alumni_path, class: "btn btn-default" %>
+<%= link_to 'New Search', rbsc_site + "/databases/undergraduate-alumni-index-part-2", class: "btn btn-default" %>
+<%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path, class: "btn btn-default" %>
+</div>
+</div>
