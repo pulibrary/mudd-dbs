@@ -26,20 +26,20 @@ def reset_alumni
 end
 =end
 def delete_newalumni
-  puts "deleting newalumni..."
-  NewAlumn.delete_all
+  puts "deleting recent_alumni..."
+  RecentAlumn.delete_all
 end
 
 def load_newalumni
-  print "loading newalumni..."
-  FastSeeder.seed_csv!(NewAlumn, "Alumni2.csv", :lname, :fname, :year, :pubfile, :academicfile)
+  print "loading recent_alumni..."
+  FastSeeder.seed_csv!(RecentAlumn, "Alumni2.csv", :lname, :fname, :year, :pubfile, :academicfile)
 end
 
 def reset_newalumni
   delete_newalumni
   load_newalumni
   puts "!"
-  puts "newalumni loaded!"
+  puts "recentalumni loaded!"
 end
 =begin
 def delete_archboards

@@ -1,0 +1,37 @@
+<%= form_for(@recent_alumn) do |f| %>
+  <% if @recent_alumn.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recent_alumn.errors.count, "error") %> prohibited this recent_alumn from being saved:</h2>
+
+      <ul>
+      <% @recent_alumn.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :lname %><br>
+    <%= f.text_field :lname %>
+  </div>
+  <div class="field">
+    <%= f.label :fname %><br>
+    <%= f.text_field :fname %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br>
+    <%= f.text_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :pubfile %><br>
+    <%= f.text_field :pubfile %>
+  </div>
+  <div class="field">
+    <%= f.label :academicfile %><br>
+    <%= f.text_field :academicfile %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

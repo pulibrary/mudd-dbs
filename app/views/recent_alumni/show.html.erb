@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lname:</strong>
+  <%= @recent_alumn.lname %>
+</p>
+
+<p>
+  <strong>Fname:</strong>
+  <%= @recent_alumn.fname %>
+</p>
+
+<p>
+  <strong>Class:</strong>
+  <%= @recent_alumn.year %>
+</p>
+
+<p>
+  <strong>Pubic File:</strong>
+  <%= @recent_alumn.pubfile %>
+</p>
+
+<p>
+  <strong>Academic File:</strong>
+  <%= @recent_alumn.academicfile %>
+</p>
+
+<%= link_to 'Edit', edit_recent_alumn_path(@recent_alumn) %> |
+<%= link_to 'Back', recent_alumni_path %>
