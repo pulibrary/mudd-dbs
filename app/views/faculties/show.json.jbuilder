@@ -1,1 +1,1 @@
-json.extract! @faculty, :id, :id, :lname, :fname, :birth, :birth, :year, :death, :leave, :dept, :box, :series, :created_at, :updated_at
+json.extract! @faculty, :id, :access_id, :lname, :fname, :birth, :birth_year, :death, :leave, :dept, :box, :series, :created_at, :updated_at
