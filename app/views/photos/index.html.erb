@@ -57,7 +57,7 @@
         <td><%= photo.negative_num %></td>
         <td><%= photo.image_num %></td>
         <td><%= photo.provenance %></td>
-        <td><%= photo.online_image %></td>
+        <td><% if photo.online_image.nil? %>None<% else %><a class="btn btn-primary" href="http://library.princeton.edu/<%= photo.online_image %>">View Image</a><% end %></td>
         <% if user_signed_in? %>
         <td><%= button_to 'Show', photo, method: :get, class: 'btn btn-xs btn-info' %></td>
         <td><%= button_to 'Edit', edit_photo_path(photo), method: :get, class: 'btn btn-xs btn-warning' %></td>
