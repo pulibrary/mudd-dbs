@@ -284,6 +284,7 @@ def reset_wwii_memorials
   puts "!"
   puts "wwii_memorials loaded!"
 end
+=end
 
 def delete_photos
   puts "deleting photos..."
@@ -292,13 +293,12 @@ end
 
 def load_photos
   print "loading photos..."
-  parsed_file = SmarterCSV.process("db/seeds/Photos.csv", {:col_sep => "|", :force_simple_split => "true"})
+  parsed_file = SmarterCSV.process("db/seeds/HPC-20k.csv", {:col_sep => ","})
 
   parsed_file.each do |value|
     print "."
     Photo.create(value)
   end
-
 end
 
 def reset_photos
@@ -308,10 +308,9 @@ def reset_photos
   puts "photos loaded!"
 end
 
-reset_alumni
-=end
-reset_newalumni
 =begin
+reset_alumni
+reset_newalumni
 reset_archboards
 reset_audiovisuals
 reset_graduates
@@ -323,5 +322,5 @@ reset_nassau_literatures
 reset_memorials
 reset_trustees
 reset_wwii_memorials
-reset_photos
 =end
+reset_photos
