@@ -32,7 +32,7 @@ end
 
 def load_newalumni
   print "loading recent_alumni..."
-  FastSeeder.seed_csv!(RecentAlumn, "Alumni2.csv", :lname, :fname, :year, :pubfile, :academicfile)
+  FastSeeder.seed_csv!(RecentAlumn, "Alumni2-update.csv", :lname, :fname, :year, :pubfile, :academicfile)
 end
 
 def reset_newalumni
@@ -322,5 +322,7 @@ reset_nassau_literatures
 reset_memorials
 reset_trustees
 reset_wwii_memorials
-=end
 reset_photos
+=end
+
+load_newalumni
