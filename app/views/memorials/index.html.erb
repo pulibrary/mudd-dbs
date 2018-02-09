@@ -4,17 +4,17 @@
 <% end %>
 <p id="notice"><%= notice %></p>
 
-<center><h1>Princeton Alumni Weekly Memorial Index, 1894-2011</h1></center>
+<h1 class="center-block">Princeton Alumni Weekly Memorial Index, 1894-2011</h1>
 
 <div class="center-block">
-  <div style="display:block" class="pagination">
+  <div class="pagination">
     <%= page_entries_info @memorials %><br>
     <%= paginate @memorials, :theme => 'twitter-bootstrap-3' %>
   </div>
 </div>
 
 <% if !@memorials.blank? %>
-<table align="center" class="table table-striped">
+<table class="table table--striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -59,13 +59,13 @@
 <% end %>
 
 <div class="center-block">
-  <div style="display:block" class="pagination">
+  <div class="pagination">
     <%= page_entries_info @memorials %><br>
     <%= paginate @memorials, :theme => 'twitter-bootstrap-3' %>
   </div>
 </div>
 
-<div style="width:100%; text-align:center;">
+<div class="center-block">
 <%= link_to "View All Records", memorials_path, class: "btn btn-default" %>
 <%= link_to 'New Search', rbsc_site + "/databases/princeton-alumni-weekly-memorial-index-1894-2011", class: "btn btn-default" %>
 <%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path, class: "btn btn-default" %>

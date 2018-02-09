@@ -7,7 +7,7 @@ gem 'rails', '~> 4.2.7'
 gem 'mysql2'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.2'
+gem 'sass-rails', '~> 5.0.7'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -60,5 +60,7 @@ gem 'capistrano-rails'
 gem 'capistrano-bundler'
 gem 'capistrano-passenger'
 
+# PUL assets
+gem 'pul-assets', :git => 'git@github.com:pulibrary/pul_assets.git', :branch => :rbsc # pulls latest master branch of pul_assets repo
 # Use debugger
 # gem 'debugger', group: [:development, :test]

@@ -8,16 +8,18 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require normalize-rails
+ *= require pul-assets
  *= require_self
  *= require_tree .
  */
 
 .center-block {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  font-family: "Muli", sans-serif;
+  margin: 1em auto;
   text-align: center;
-  }
+}
 
 .pull-right {
   float:right;
