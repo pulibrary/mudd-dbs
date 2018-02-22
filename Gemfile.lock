@@ -1,3 +1,17 @@
+GIT
+  remote: git@github.com:pulibrary/pul_assets.git
+  revision: 8d155c2824a4eb611abe1d6337cd49e74a53d536
+  branch: master
+  specs:
+    pul-assets (0.2.2)
+      bourbon (~> 4.2.6)
+      breakpoint (~> 2.7.0)
+      jquery-datatables-rails (~> 3.4.0)
+      jquery-tablesorter (~> 1.20.5)
+      modernizr-rails (~> 2.7.1)
+      normalize-rails (~> 3.0.3)
+      susy (~> 2.2.12)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -42,6 +56,12 @@ GEM
     bootstrap-kaminari-views (0.0.5)
       kaminari (>= 0.13)
       rails (>= 3.1)
+    bourbon (4.2.7)
+      sass (~> 3.4)
+      thor (~> 0.19)
+    breakpoint (2.7.1)
+      sass (~> 3.3)
+      sassy-maps (< 1.0.0)
     builder (3.2.3)
     capistrano (3.10.1)
       airbrussh (>= 1.0.0)
@@ -85,10 +105,17 @@ GEM
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
+    jquery-datatables-rails (3.4.0)
+      actionpack (>= 3.1)
+      jquery-rails
+      railties (>= 3.1)
+      sass-rails
     jquery-rails (4.3.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
+    jquery-tablesorter (1.20.8)
+      railties (>= 3.2, < 6)
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.1.1)
@@ -118,6 +145,7 @@ GEM
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
+    modernizr-rails (2.7.1)
     multi_json (1.13.1)
     mysql2 (0.4.10)
     net-scp (1.2.1)
@@ -125,6 +153,7 @@ GEM
     net-ssh (4.2.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
+    normalize-rails (3.0.3)
     orm_adapter (0.5.0)
     rack (1.6.8)
     rack-test (0.6.3)
@@ -159,12 +188,15 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
-    sass (3.2.19)
-    sass-rails (4.0.5)
-      railties (>= 4.0.0, < 5.0)
-      sass (~> 3.2.2)
-      sprockets (~> 2.8, < 3.0)
-      sprockets-rails (~> 2.0)
+    sass (3.4.25)
+    sass-rails (5.0.7)
+      railties (>= 4.0.0, < 6)
+      sass (~> 3.1)
+      sprockets (>= 2.8, < 4.0)
+      sprockets-rails (>= 2.0, < 4.0)
+      tilt (>= 1.1, < 3)
+    sassy-maps (0.4.0)
+      sass (~> 3.3)
     sdoc (1.0.0)
       rdoc (>= 5.0)
     smarter_csv (1.2.3)
@@ -180,6 +212,8 @@ GEM
     sshkit (1.16.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    susy (2.2.12)
+      sass (>= 3.3.0, < 3.5)
     therubyracer (0.12.3)
       libv8 (~> 3.16.14.15)
       ref
@@ -217,8 +251,9 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mysql2
+  pul-assets!
   rails (~> 4.2.10)
-  sass-rails (~> 4.0.2)
+  sass-rails (~> 5.0.7)
   sdoc
   smarter_csv
   therubyracer
