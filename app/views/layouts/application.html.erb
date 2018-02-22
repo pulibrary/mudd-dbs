@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Mudd Databases</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", 'https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Muli:300,400,300italic,400italic', media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag :application, media: "all", "data-turbolinks-track" => true %>
+  <%= favicon_link_tag %>
+  <%= javascript_include_tag :modernizr %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= csrf_meta_tags %>
 </head>
-<body class="container">
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<%= yield %>
-
+<body>
+  <%= render 'pul-assets/header_branding' %>
+  <%= render 'pul-assets/header_branding_rbsc' %>
+  <%= yield %>
+  <%= render 'pul-assets/footer' %>
 </body>
 </html>
