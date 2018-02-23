@@ -1,7 +1,7 @@
 GIT
   remote: git@github.com:pulibrary/pul_assets.git
-  revision: 8d155c2824a4eb611abe1d6337cd49e74a53d536
-  branch: master
+  revision: 81a138437fe0fd8947a8803af9f70112857e7fb4
+  tag: v0.2.3
   specs:
     pul-assets (0.2.2)
       bourbon (~> 4.2.6)
