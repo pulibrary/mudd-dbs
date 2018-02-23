@@ -61,6 +61,6 @@ gem 'capistrano-bundler'
 gem 'capistrano-passenger'
 
 # PUL assets
-gem 'pul-assets', :git => 'git@github.com:pulibrary/pul_assets.git', :branch => :master # pulls latest master branch of pul_assets repo
+gem 'pul-assets', :git => 'git@github.com:pulibrary/pul_assets.git', :tag => 'v0.2.4'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
