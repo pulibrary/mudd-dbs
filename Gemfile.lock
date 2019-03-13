@@ -142,7 +142,7 @@ GEM
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     mini_mime (1.0.1)
-    mini_portile2 (2.4.0)
+    mini_portile2 (2.3.0)
     minitest (5.11.3)
     modernizr-rails (2.7.1)
     multi_json (1.13.1)
@@ -150,8 +150,8 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (4.2.0)
-    nokogiri (1.10.1)
-      mini_portile2 (~> 2.4.0)
+    nokogiri (1.8.5)
+      mini_portile2 (~> 2.3.0)
     normalize-rails (3.0.3)
     orm_adapter (0.5.0)
     rack (1.6.11)
@@ -248,6 +248,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mysql2
+  nokogiri (= 1.8.5)
   pul-assets!
   rails (~> 4.2.10)
   sass-rails (~> 5.0.7)

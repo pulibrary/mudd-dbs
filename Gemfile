@@ -35,6 +35,7 @@ gem "twitter-bootstrap-rails"
 
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
+gem "nokogiri", "1.8.5"
 
 
 group :doc do
