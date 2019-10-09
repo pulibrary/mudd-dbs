@@ -1,19 +1,19 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.2.10'
+gem 'rails', '~> 5.2.3'
 
 # Use mysql as the database for Active Record
 gem 'mysql2'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0.7'
+gem 'sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
@@ -25,9 +25,9 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder'
 
-gem "fast_seeder"
+# gem "fast_seeder"
 
 gem "smarter_csv"
 
@@ -35,8 +35,8 @@ gem "twitter-bootstrap-rails"
 
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
-gem "nokogiri", "1.8.5"
-gem "rdoc", "~> 5.0"
+gem "nokogiri"
+gem "rdoc"
 
 
 group :doc do
@@ -63,6 +63,6 @@ gem 'capistrano-bundler'
 gem 'capistrano-passenger'
 
 # PUL assets
-gem 'pul-assets', :git => 'git@github.com:pulibrary/pul_assets.git', :tag => 'v0.2.4'
+gem 'pul-assets', :git => 'git@github.com:pulibrary/pul_assets.git', :branch => :master #'v0.2.4'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
