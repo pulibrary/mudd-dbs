@@ -1,4 +1,4 @@
-class CreateMemorials < ActiveRecord::Migration
+class CreateMemorials < ActiveRecord::Migration[5.2]
   def change
     create_table :memorials do |t|
       t.string :publication

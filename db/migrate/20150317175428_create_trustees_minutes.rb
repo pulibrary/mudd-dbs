@@ -1,4 +1,4 @@
-class CreateTrusteesMinutes < ActiveRecord::Migration
+class CreateTrusteesMinutes < ActiveRecord::Migration[5.2]
   def change
     create_table :trustees_minutes do |t|
       t.string :access_id
