@@ -37,7 +37,7 @@ gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem "nokogiri"
 gem "rdoc"
-
+gem "activerecord-import"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -66,3 +66,8 @@ gem 'capistrano-passenger'
 gem 'pul-assets', :git => 'git@github.com:pulibrary/pul_assets.git', :branch => :master #'v0.2.4'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :development, :test do
+  gem "byebug", platforms: %i[mri mingw x64_mingw]
+end
+

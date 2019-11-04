@@ -7,7 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # Seeding from CSV file placed in the db/seeds directory:
-=begin
 def delete_alumni
   puts "deleting alumni..."
   Alumn.delete_all
@@ -15,7 +14,8 @@ end
 
 def load_alumni
   print "loading alumni..."
-  FastSeeder.seed_csv!(Alumn, "ALUMNI.csv", :box, :lname, :fname, :year, :graduate, :photos, :oversize)
+  # FastSeeder.seed_csv!(Alumn, "ALUMNI.csv", :box, :lname, :fname, :year, :graduate, :photos, :oversize)
+  import_csv(class_name: Alumn, csv_file: "ALUMNI.csv", headers: [:box, :lname, :fname, :year, :graduate, :photos, :oversize])
 end
 
 def reset_alumni
@@ -24,15 +24,24 @@ def reset_alumni
   puts "!"
   puts "alumni loaded!"
 end
-=end
+
+def import_csv(class_name:, csv_file:, headers:, col_sep: ',', quote_char: '"' )
+  list = []
+  CSV.foreach(Rails.root.join('db','seeds',csv_file), headers: headers, col_sep: col_sep, quote_char: quote_char) do |row|
+    hash = row.to_h
+    hash.delete(nil)
+    list << class_name.new(hash)
+  end
+  class_name.import list
+end
+
 def delete_newalumni
   puts "deleting recent_alumni..."
   RecentAlumn.delete_all
 end
-
 def load_newalumni
   print "loading recent_alumni..."
-  FastSeeder.seed_csv!(RecentAlumn, "Alumni2-update.csv", :lname, :fname, :year, :pubfile, :academicfile)
+  import_csv(class_name: RecentAlumn, csv_file: "Alumni2-update.csv", headers: [:lname, :fname, :year, :pubfile, :academicfile])
 end
 
 def reset_newalumni
@@ -41,7 +50,7 @@ def reset_newalumni
   puts "!"
   puts "recentalumni loaded!"
 end
-=begin
+
 def delete_archboards
   puts "deleting archboards..."
   Archboard.delete_all
@@ -49,7 +58,7 @@ end
 
 def load_archboards
   print "loading archboards..."
-  FastSeeder.seed_csv!(Archboard, "Archboards.csv", :numbers_assigned, :original_assigned, :building_info_sheet, :drawing_title, :drawing_number, :project_type, :drawing_type, :board_date, :board_dimensions, :color, :drawing_view, :elevation, :comments, :contractor1_type, :contractor1_name, :contractor2_type, :contractor2_name, :contractor3_type, :contractor3_name, :proposal, :not_constructed, :bw_fiche)
+  import_csv(class_name: Archboard, csv_file: "Archboards.csv", headers: [:numbers_assigned, :original_assigned, :building_info_sheet, :drawing_title, :drawing_number, :project_type, :drawing_type, :board_date, :board_dimensions, :color, :drawing_view, :elevation, :comments, :contractor1_type, :contractor1_name, :contractor2_type, :contractor2_name, :contractor3_type, :contractor3_name, :proposal, :not_constructed, :bw_fiche])
 end
 
 def reset_archboards
@@ -66,12 +75,7 @@ end
 
 def load_audiovisuals
   print "loading audiovisuals..."
-  parsed_file = SmarterCSV.process("db/seeds/AudioVisuals.csv", {:col_sep => "|", :force_simple_split => "true"})
-
-  parsed_file.each do |value|
-    print "."
-    AudioVisual.create(value)
-  end
+  import_csv(class_name: AudioVisual, csv_file: "AudioVisuals.csv", headers: true, col_sep: '|', quote_char: "^") #putting quote_char to a value not in the file so quotes in the file will be passed through
 
 end
 
@@ -89,8 +93,7 @@ end
 
 def load_graduates
   print "loading graduates..."
-  FastSeeder.seed_csv!(Graduate, "Graduate.csv", :box, :lastname, :firstname, :year, :department, :deathdate, :photos, :oversize)
-
+  import_csv(class_name: Graduate, csv_file: "Graduate.csv", headers: [:box, :lastname, :firstname, :year, :department, :deathdate, :photos, :oversize])
 end
 
 def reset_graduates
@@ -108,7 +111,7 @@ end
 
 def load_honoraries
   print "loading honoraries..."
-  FastSeeder.seed_csv!(Honorary, "honorary.csv", :lname, :fname, :year, :death, :degree, :file)
+  import_csv(class_name: Honorary, csv_file: "honorary.csv", headers: [:lname, :fname, :year, :death, :degree, :file])
 
 end
 
@@ -127,13 +130,7 @@ end
 
 def load_memorabilia
   print "loading memorabilia..."
-  parsed_file = SmarterCSV.process("db/seeds/Memorabilia.csv", {:col_sep => "|", :force_simple_split => "true"})
-
-  parsed_file.each do |value|
-    print "."
-    Memorabilium.create(value)
-  end
-
+  import_csv(class_name: Memorabilium, csv_file: "Memorabilia.csv", headers: true, col_sep: '|', quote_char: "^")
 end
 
 def reset_memorabilia
@@ -144,20 +141,12 @@ def reset_memorabilia
 end
 
 def delete_faculties
-  puts "deleting faculty..."
+  print "deleting faculty..."
   Faculty.delete_all
 end
 
 def load_faculties
-  print "loading faculty..."
-  #FastSeeder.seed_csv!(Faculty, "Faculty_test.csv", :access_id,:lname,:fname,:birth,:birth_year,:death,:leave,:dept,:box,:series)
-  parsed_file = SmarterCSV.process("db/seeds/Faculty.csv")
-
-  parsed_file.each do |value|
-    print "."
-    Faculty.create(value)
-  end
-
+  import_csv(class_name: Faculty, csv_file: "Faculty.csv", headers: [:access_id,:lname,:fname,:birth,:birth_year,:death,:leave,:dept,:box,:series])
 end
 
 def reset_faculties
@@ -174,13 +163,7 @@ end
 
 def load_trustees_minutes
   print "loading trustees_minutes..."
-  parsed_file = SmarterCSV.process("db/seeds/TrusteesMinutes.csv", {:col_sep => "|", :force_simple_split => "true"})
-
-  parsed_file.each do |value|
-    print "."
-    TrusteesMinute.create(value)
-  end
-
+  import_csv(class_name: TrusteesMinute, csv_file: "TrusteesMinutes.csv", headers: true, col_sep: '|', quote_char: "^")
 end
 
 def reset_trustees_minutes
@@ -198,13 +181,7 @@ end
 
 def load_nassau_literatures
   print "loading nassau_literatures..."
-  parsed_file = SmarterCSV.process("db/seeds/NASSLIT.csv", {:col_sep => "|", :force_simple_split => "true"})
-
-  parsed_file.each do |value|
-    print "."
-    NassauLiterature.create(value)
-  end
-
+  import_csv(class_name: NassauLiterature, csv_file: "NASSLIT.csv", headers: true, col_sep: '|', quote_char: "^")
 end
 
 def reset_nassau_literatures
@@ -221,15 +198,7 @@ end
 
 def load_memorials
   print "loading memorials..."
-  #FastSeeder.seed_csv!(Memorial, "PAW.csv", :publication :volume :no :publish_date :type :subject :class_year :class_grade :page)
-
-  parsed_file = SmarterCSV.process("db/seeds/PAW.csv")
-
-  parsed_file.each do |value|
-    print "."
-    Memorial.create(value)
-  end
-
+  import_csv(class_name: Memorial, csv_file: "PAW.csv", headers: true)
 end
 
 def reset_memorials
@@ -246,13 +215,7 @@ end
 
 def load_trustees
   print "loading trustees..."
-  parsed_file = SmarterCSV.process("db/seeds/TrusteesList.csv")
-
-  parsed_file.each do |value|
-    print "."
-    Trustee.create(value)
-  end
-
+  import_csv(class_name: Trustee, csv_file: "TrusteesList.csv", headers: true)
 end
 
 def reset_trustees
@@ -269,13 +232,7 @@ end
 
 def load_wwii_memorials
   print "loading wwii_memorials..."
-  parsed_file = SmarterCSV.process("db/seeds/WarBook.csv", {:col_sep => "|", :force_simple_split => "true"})
-
-  parsed_file.each do |value|
-    print "."
-    WwiiMemorial.create(value)
-  end
-
+  import_csv(class_name: WwiiMemorial, csv_file: "WarBook.csv", headers: true, col_sep: '|', quote_char: "^")
 end
 
 def reset_wwii_memorials
@@ -284,7 +241,6 @@ def reset_wwii_memorials
   puts "!"
   puts "wwii_memorials loaded!"
 end
-=end
 
 def delete_photos
   puts "deleting photos..."
@@ -293,12 +249,7 @@ end
 
 def load_photos
   print "loading photos..."
-  parsed_file = SmarterCSV.process("db/seeds/HPC-20k.csv", {:col_sep => ","})
-
-  parsed_file.each do |value|
-    print "."
-    Photo.create(value)
-  end
+  import_csv(class_name: Photo, csv_file: "HPC-20k.csv", headers: true)
 end
 
 def reset_photos
@@ -308,7 +259,6 @@ def reset_photos
   puts "photos loaded!"
 end
 
-=begin
 reset_alumni
 reset_newalumni
 reset_archboards
@@ -323,6 +273,3 @@ reset_memorials
 reset_trustees
 reset_wwii_memorials
 reset_photos
-=end
-
-load_newalumni
