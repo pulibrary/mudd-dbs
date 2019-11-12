@@ -89,4 +89,5 @@ Alumni::Application.configure do
     from:                 'no_reply@libruby-prod.princeton.edu',
   }
 
+  config.assets.prefix = '/mudd-dbs/assets'
 end
