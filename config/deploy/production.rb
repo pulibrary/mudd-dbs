@@ -14,7 +14,7 @@ set :passenger_restart_with_touch, true
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'libruby-prod', user: 'deploy', roles: %w{web app db}, my_property: :my_value
+server 'lib-mudd-prod1', user: 'deploy', roles: %w{web app db}, my_property: :my_value
 
 
 # Custom SSH Options
