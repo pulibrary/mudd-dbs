@@ -1,4 +1,4 @@
-class CreateArchboards < ActiveRecord::Migration
+class CreateArchboards < ActiveRecord::Migration[5.2]
   def change
     create_table :archboards do |t|
       t.decimal :numbers_assigned

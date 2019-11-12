@@ -36,6 +36,22 @@ set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/ca
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+namespace :mudd do
+  desc "Upload the seed file"
+  task :upload_seeds, [:seed_tar_gz] do |_t, args|
+    seed_tar_gz = args[:seed_tar_gz]
+    seed_tar = seed_tar_gz.sub('.gz','')
+    on roles(:app) do |host|
+      upload! File.join('./', seed_tar_gz), "/tmp/#{seed_tar_gz}"
+      execute "gzip -d -f /tmp/#{seed_tar_gz}"
+      with :rails_env => fetch(:rails_env) do
+        execute "cd #{current_path}; mkdir -p db/seeds"
+        execute "cd #{current_path}/db/seeds/; tar -xvf /tmp/#{seed_tar} "
+        execute "cd #{current_path}; bundle exec rake db:seed"
+      end
+    end
+  end
+end
 namespace :deploy do
 
   after :restart, :clear_cache do

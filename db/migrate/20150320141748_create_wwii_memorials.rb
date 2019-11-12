@@ -1,4 +1,4 @@
-class CreateWwiiMemorials < ActiveRecord::Migration
+class CreateWwiiMemorials < ActiveRecord::Migration[5.2]
   def change
     create_table :wwii_memorials do |t|
       t.string :access_id

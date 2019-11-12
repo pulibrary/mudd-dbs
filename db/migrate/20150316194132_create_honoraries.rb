@@ -1,4 +1,4 @@
-class CreateHonoraries < ActiveRecord::Migration
+class CreateHonoraries < ActiveRecord::Migration[5.2]
   def change
     create_table :honoraries do |t|
       t.string :lname

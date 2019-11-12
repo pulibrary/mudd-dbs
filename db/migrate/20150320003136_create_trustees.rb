@@ -1,4 +1,4 @@
-class CreateTrustees < ActiveRecord::Migration
+class CreateTrustees < ActiveRecord::Migration[5.2]
   def change
     create_table :trustees do |t|
       t.string :access_id

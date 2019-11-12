@@ -1,4 +1,4 @@
-class CreateAudioVisuals < ActiveRecord::Migration
+class CreateAudioVisuals < ActiveRecord::Migration[5.2]
   def change
     create_table :audio_visuals do |t|
       t.string :item

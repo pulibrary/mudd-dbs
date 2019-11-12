@@ -1,4 +1,4 @@
-class CreateNassauLiteratures < ActiveRecord::Migration
+class CreateNassauLiteratures < ActiveRecord::Migration[5.2]
   def change
     create_table :nassau_literatures do |t|
       t.string :lname
