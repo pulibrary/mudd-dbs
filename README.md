@@ -17,7 +17,7 @@ Mudd Databases App upgrade/migration to Rails
    ```
    ssh pulsys@<host-with-data>
    more config/database.yml
-   mysqldump -h <database host> -u <database user> -p  <database name> >~/dump2.sql 
+   mysqldump -h <database host> -u <database user> -p  <database name> >~/dump.sql 
    exit
    ```
 1. Copy the dump from the machine that has the data to the machine that needs the data `<host-receive-data>`
