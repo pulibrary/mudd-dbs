@@ -15,7 +15,7 @@ end
 def load_alumni
   print "loading alumni..."
   # FastSeeder.seed_csv!(Alumn, "ALUMNI.csv", :box, :lname, :fname, :year, :graduate, :photos, :oversize)
-  import_csv(class_name: Alumn, csv_file: "ALUMNI.csv", headers: [:box, :lname, :fname, :year, :graduate, :photos, :oversize])
+  import_csv(class_name: Alumn, csv_file: "Alumni2.csv", headers: [:box, :lname, :fname, :year, :graduate, :photos, :oversize])
 end
 
 def reset_alumni
