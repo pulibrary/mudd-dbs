@@ -8,4 +8,8 @@ module ApplicationHelper
     "/mudd"
   end
 
+  def mudd_dbs_path
+    "/mudd-dbs"
+  end
+
 end
