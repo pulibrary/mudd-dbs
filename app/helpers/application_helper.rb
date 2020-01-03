@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def rbsc_site
-    "https://library-staging.princeton.edu/special-collections/"
+    "https://library.princeton.edu/special-collections/"
   end
 
   def mudd_path
