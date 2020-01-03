@@ -5,7 +5,7 @@ module ApplicationHelper
   end
 
   def mudd_path
-    "/special-collections/mudd"
+    "/mudd"
   end
 
 end
