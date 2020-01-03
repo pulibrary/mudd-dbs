@@ -9,7 +9,7 @@
 <div class="center-block">
   <div class="pagination">
     <%= page_entries_info @alumni %><br>
-    <%= paginate @alumni, :theme => 'twitter-bootstrap-3' %>
+    <%= paginate @alumni, :theme => 'twitter-bootstrap-3', params: { script_name: "/mudd-dbs" }%>
   </div>
 </div>
 
@@ -63,7 +63,7 @@
 </div>
 
 <div class="center-block">
-<%= link_to "View All Records", alumni_path, class: "btn btn-default" %>
+<%= link_to "View All Records", mudd_dbs_path + alumni_path, class: "btn btn-default" %>
 <%= link_to 'New Search', rbsc_site + "/databases/undergraduate-alumni-index-1748-1920", class: "btn btn-default" %>
 <%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path, class: "btn btn-default" %>
 </div>

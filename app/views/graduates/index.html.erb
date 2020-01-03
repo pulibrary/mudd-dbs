@@ -9,7 +9,7 @@
 <div class="center-block">
   <div class="pagination">
     <%= page_entries_info @graduates %><br>
-    <%= paginate @graduates, :theme => 'twitter-bootstrap-3' %>
+    <%= paginate @graduates, :theme => 'twitter-bootstrap-3', params: { script_name: "/mudd-dbs" }%>
   </div>
 </div>
 
@@ -66,7 +66,7 @@
 </div>
 
 <div class="center-block">
-<%= link_to "View All Records", graduates_path, class: "btn btn-default" %>
+<%= link_to "View All Records", mudd_dbs_path + graduates_path, class: "btn btn-default" %>
 <%= link_to 'New Search', rbsc_site + "/databases/princeton-university-graduate-alumni-index-1839-1998", class: "btn btn-default" %>
 <%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path, class: "btn btn-default" %>
 </div>

@@ -9,7 +9,7 @@
 <div class="center-block">
   <div class="pagination">
     <%= page_entries_info @nassau_literatures %><br>
-    <%= paginate @nassau_literatures, :theme => 'twitter-bootstrap-3' %>
+    <%= paginate @nassau_literatures, :theme => 'twitter-bootstrap-3', params: { script_name: "/mudd-dbs" }%>
   </div>
 </div>
 
@@ -64,7 +64,7 @@
 </div>
 
 <div class="center-block">
-<%= link_to "View All Records", nassau_literatures_path, class: "btn btn-default" %>
+<%= link_to "View All Records", mudd_dbs_path + mudd_dbs_path + nassau_literatures_path, class: "btn btn-default" %>
 <%= link_to 'New Search', rbsc_site + "/databases/nassau-literary-magazine-index-1842-1942", class: "btn btn-default" %>
 <%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path, class: "btn btn-default" %>
 </div>

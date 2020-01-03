@@ -9,7 +9,7 @@
 <div class="center-block">
   <div class="pagination">
     <%= page_entries_info @audio_visuals %><br>
-    <%= paginate @audio_visuals, :theme => 'twitter-bootstrap-3' %>
+    <%= paginate @audio_visuals, :theme => 'twitter-bootstrap-3', params: { script_name: "/mudd-dbs" }%>
   </div>
 </div>
 
@@ -72,7 +72,7 @@
 </div>
 
 <div class="center-block">
-<%= link_to "View All Records", audio_visuals_path, class: "btn btn-default" %>
+<%= link_to "View All Records", mudd_dbs_path + audio_visuals_path, class: "btn btn-default" %>
 <%= link_to 'New Search', rbsc_site + "/databases/princeton-university-historical-audio-visual-collection", class: "btn btn-default" %>
 <%= link_to 'Return to the Mudd Library website', rbsc_site + mudd_path, class: "btn btn-default" %>
 </div>
