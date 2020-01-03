@@ -8,8 +8,8 @@
 
 <div class="center-block">
   <div class="pagination">
-    <%= page_entries_info @wwii_memorials %><br>
-    <%= paginate @wwii_memorials, :theme => 'twitter-bootstrap-3' %>
+    <%= page_entries_info @wwii_memorials %><br>  
+    <%= paginate @wwii_memorials, :theme => 'twitter-bootstrap-3', params: { script_name: "/mudd-dbs" }%>
   </div>
 </div>
 

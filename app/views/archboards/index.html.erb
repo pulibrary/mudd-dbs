@@ -9,7 +9,7 @@
 <div class="center-block">
   <div class="pagination">
     <%= page_entries_info @archboards %><br>
-    <%= paginate @archboards, :theme => 'twitter-bootstrap-3' %>
+    <%= paginate @archboards, :theme => 'twitter-bootstrap-3', params: { script_name: "/mudd-dbs" }%>
   </div>
 </div>
 

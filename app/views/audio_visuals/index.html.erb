@@ -9,7 +9,7 @@
 <div class="center-block">
   <div class="pagination">
     <%= page_entries_info @audio_visuals %><br>
-    <%= paginate @audio_visuals, :theme => 'twitter-bootstrap-3' %>
+    <%= paginate @audio_visuals, :theme => 'twitter-bootstrap-3', params: { script_name: "/mudd-dbs" }%>
   </div>
 </div>
 
