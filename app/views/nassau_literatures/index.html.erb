@@ -6,12 +6,7 @@
 
 <h1 class="center-block">Nassau Literary Magazine Index, 1842-1942</h1>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @nassau_literatures %><br>
-    <%= paginate @nassau_literatures, :theme => 'twitter-bootstrap-3', params: { script_name: "/mudd-dbs" }%>
-  </div>
-</div>
+<%= render '/shared/pages', items: @nassau_literatures %>
 
 <% if !@nassau_literatures.blank? %>
 <table class="table table--striped">
@@ -56,12 +51,7 @@
 <%= button_to 'New Nassau literature', new_nassau_literature_path, method: :get, class: 'btn btn-success' %>
 <% end %>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @nassau_literatures %><br>
-    <%= paginate @nassau_literatures, :theme => 'twitter-bootstrap-3' %>
-  </div>
-</div>
+<%= render '/shared/pages', items: @nassau_literatures %>
 
 <div class="center-block">
 <%= link_to "View All Records", mudd_dbs_path + mudd_dbs_path + nassau_literatures_path, class: "btn btn-default" %>

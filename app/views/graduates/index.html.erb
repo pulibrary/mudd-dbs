@@ -6,12 +6,7 @@
 
 <h1 class="center-block">Princeton University Graduate Alumni Index, 1839-1998</h1>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @graduates %><br>
-    <%= paginate @graduates, :theme => 'twitter-bootstrap-3', params: { script_name: "/mudd-dbs" }%>
-  </div>
-</div>
+<%= render '/shared/pages', items: @graduates %>
 
 <% if !@graduates.blank? %>
 <table class="table table--striped">
@@ -58,12 +53,7 @@
 <%= button_to 'New Graduate', new_graduate_path, method: :get, class: 'btn btn-success' %>
 <% end %>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @graduates %><br>
-    <%= paginate @graduates, :theme => 'twitter-bootstrap-3' %>
-  </div>
-</div>
+<%= render '/shared/pages', items: @graduates %>
 
 <div class="center-block">
 <%= link_to "View All Records", mudd_dbs_path + graduates_path, class: "btn btn-default" %>

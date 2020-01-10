@@ -6,12 +6,7 @@
 
 <h1 class="center-block">Architectural Presentation Boards</h1>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @archboards %><br>
-    <%= paginate @archboards, :theme => 'twitter-bootstrap-3', params: { script_name: "/mudd-dbs" }%>
-  </div>
-</div>
+<%= render '/shared/pages', items: @archboards %>
 
 <% if !@archboards.blank? %>
 <table class="table table--striped">
@@ -76,12 +71,7 @@
 <%= button_to 'New Archboard', new_archboard_path, method: :get, class: 'btn btn-success' %>
 <% end %>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @archboards %><br>
-    <%= paginate @archboards, :theme => 'twitter-bootstrap-3' %>
-  </div>
-</div>
+<%= render '/shared/pages', items: @archboards %>
 
 <div class="center-block">
 <%= link_to "View All Records", mudd_dbs_path + archboards_path, class: "btn btn-default" %>

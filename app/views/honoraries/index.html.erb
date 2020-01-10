@@ -6,12 +6,7 @@
 
 <h1 class="center-block">Honorary Degree Recipients, 1748-2001</h1>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @honoraries %><br>
-    <%= paginate @honoraries, :theme => 'twitter-bootstrap-3', params: { script_name: "/mudd-dbs" }%>
-  </div>
-</div>
+<%= render '/shared/pages', items: @honoraries %>
 
 <% if !@honoraries.blank? %>
 <table class="table table--striped">
@@ -54,13 +49,7 @@
 <%= button_to 'New Honorary', new_honorary_path, method: :get, class: 'btn btn-success' %>
 <% end %>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @honoraries %><br>
-    <%= paginate @honoraries, :theme => 'twitter-bootstrap-3' %>
-  </div>
-</div>
-
+<%= render '/shared/pages', items: @honoraries %>
 
 <div class="center-block">
 <%= link_to "View All Records", mudd_dbs_path + honoraries_path, class: "btn btn-default" %>

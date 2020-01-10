@@ -6,12 +6,7 @@
 
 <h1 class="center-block">World War II Memorial Book</h1>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @wwii_memorials %><br>
-    <%= paginate @wwii_memorials, :theme => 'twitter-bootstrap-3', params: { script_name: "/mudd-dbs" }%>
-  </div>
-</div>
+<%= render '/shared/pages', items: @wwii_memorials %>
 
 <% if !@wwii_memorials.blank? %>
   <table class="table table--striped">
@@ -52,12 +47,7 @@
 <%= button_to 'New Wwii memorial', new_wwii_memorial_path, method: :get, class: 'btn btn-success' %>
 <% end %>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @wwii_memorials %><br>
-    <%= paginate @wwii_memorials, :theme => 'twitter-bootstrap-3' %>
-  </div>
-</div>
+<%= render '/shared/pages', items: @wwii_memorials %>
 
 <div class="center-block">
 <%= link_to "View All Records", mudd_dbs_path + wwii_memorials_path, class: "btn btn-default" %>

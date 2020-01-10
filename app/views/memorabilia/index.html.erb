@@ -6,12 +6,7 @@
 
 <h1 class="center-block">Princeton Memorabilia Collection</h1>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @memorabilia %><br>
-    <%= paginate @memorabilia, :theme => 'twitter-bootstrap-3', params: { script_name: "/mudd-dbs" }%>
-  </div>
-</div>
+<%= render '/shared/pages', items: @memorabilia %>
 
 <% if !@memorabilia.blank? %>
 <table class="table table--striped">
@@ -56,12 +51,7 @@
 <%= button_to 'New Memorabilium', new_memorabilium_path, method: :get, class: 'btn btn-success' %>
 <% end %>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @memorabilia %><br>
-    <%= paginate @memorabilia, :theme => 'twitter-bootstrap-3' %>
-  </div>
-</div>
+<%= render '/shared/pages', items: @memorabilia %>
 
 <div class="center-block">
 <%= link_to "View All Records", mudd_dbs_path + memorabilia_path, class: "btn btn-default" %>

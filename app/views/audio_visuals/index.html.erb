@@ -6,12 +6,7 @@
 
 <h1 class="center-block">Princeton University Historical Audio-Visual Collection</h1>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @audio_visuals %><br>
-    <%= paginate @audio_visuals, :theme => 'twitter-bootstrap-3', params: { script_name: "/mudd-dbs" }%>
-  </div>
-</div>
+<%= render '/shared/pages', items: @audio_visuals %>
 
 <% if !@audio_visuals.blank? %>
 <table class="table table--striped">
@@ -64,12 +59,7 @@
 <%= button_to 'New Audio visual', new_audio_visual_path, method: :get, class: 'btn btn-success' %>
 <% end %>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @audio_visuals %><br>
-    <%= paginate @audio_visuals, :theme => 'twitter-bootstrap-3' %>
-  </div>
-</div>
+<%= render '/shared/pages', items: @audio_visuals %>
 
 <div class="center-block">
 <%= link_to "View All Records", mudd_dbs_path + audio_visuals_path, class: "btn btn-default" %>
