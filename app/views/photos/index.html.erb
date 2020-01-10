@@ -6,12 +6,7 @@
 
 <h1 class="center-block">Princeton University Historical Photograph Collection</h1>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @photos %><br>
-    <%= paginate @photos, :theme => 'twitter-bootstrap-3', params: { script_name: "/mudd-dbs" }%>
-  </div>
-</div>
+<%= render '/shared/pages', items: @photos %>
 
 <% if !@photos.blank? %>
 <table class="table table--striped">
@@ -74,12 +69,7 @@
 <%= button_to 'New Photo', new_photo_path, method: :get, class: 'btn btn-success' %>
 <% end %>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @photos %><br>
-    <%= paginate @photos, :theme => 'twitter-bootstrap-3' %>
-  </div>
-</div>
+<%= render '/shared/pages', items: @photos %>
 
 <div class="center-block">
 <%= link_to "View All Records", mudd_dbs_path + photos_path, class: "btn btn-default" %>

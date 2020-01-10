@@ -6,12 +6,7 @@
 
 <h1 class="center-block">Faculty and Professional Staff Index, 1764-2006</h1>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @faculties %><br>
-    <%= paginate @faculties, :theme => 'twitter-bootstrap-3', params: { script_name: "/mudd-dbs" }%>
-  </div>
-</div>
+<%= render '/shared/pages', items: @faculties %>
 
 <% if !@faculties.blank? %>
 <table class="table table--striped">
@@ -54,12 +49,7 @@
 <%= button_to 'New Faculty', new_faculty_path, method: :get, class: 'btn btn-success' %>
 <% end %>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @faculties %><br>
-    <%= paginate @faculties, :theme => 'twitter-bootstrap-3' %>
-  </div>
-</div>
+<%= render '/shared/pages', items: @faculties %>
 
 <div class="center-block">
 <%= link_to "View All Records", mudd_dbs_path + faculties_path, class: "btn btn-default" %>

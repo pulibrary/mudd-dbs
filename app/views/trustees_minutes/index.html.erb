@@ -6,13 +6,7 @@
 
 <h1 class="center-block">Trustees Minutes, 1746-1894</h1>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @trustees_minutes %><br>
-    <%= paginate @trustees_minutes, :theme => 'twitter-bootstrap-3', params: { script_name: "/mudd-dbs" }%>
-  </div>
-</div>
-
+<%= render '/shared/pages', items: @trustees_minutes %>
 
 <% if !@trustees_minutes.blank? %>
   <table class="table table--striped">
@@ -52,12 +46,7 @@
 <%= button_to 'New Trustees minute', new_trustees_minute_path, method: :get, class: 'btn btn-success' %>
 <% end %>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @trustees_minutes %><br>
-    <%= paginate @trustees_minutes, :theme => 'twitter-bootstrap-3' %>
-  </div>
-</div>
+<%= render '/shared/pages', items: @trustees_minutes %>
 
 <div class="center-block">
 <%= link_to "View All Records", mudd_dbs_path + trustees_minutes_path, class: "btn btn-default" %>

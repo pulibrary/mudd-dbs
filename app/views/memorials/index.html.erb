@@ -6,12 +6,7 @@
 
 <h1 class="center-block">Princeton Alumni Weekly Memorial Index, 1894-2011</h1>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @memorials %><br>
-    <%= paginate @memorials, :theme => 'twitter-bootstrap-3', params: { script_name: "/mudd-dbs" }%>
-  </div>
-</div>
+<%= render '/shared/pages', items: @memorials %>
 
 <% if !@memorials.blank? %>
 <table class="table table--striped">
@@ -58,12 +53,7 @@
 <%= button_to 'New Memorial', new_memorial_path, method: :get, class: 'btn btn-success' %>
 <% end %>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @memorials %><br>
-    <%= paginate @memorials, :theme => 'twitter-bootstrap-3' %>
-  </div>
-</div>
+<%= render '/shared/pages', items: @memorials %>
 
 <div class="center-block">
 <%= link_to "View All Records", mudd_dbs_path + memorials_path, class: "btn btn-default" %>

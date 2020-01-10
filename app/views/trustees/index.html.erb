@@ -6,12 +6,7 @@
 
 <h1 class="center-block">Trustee Index, 1746-2001</h1>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @trustees %><br>
-    <%= paginate @trustees, :theme => 'twitter-bootstrap-3', params: { script_name: "/mudd-dbs" }%>
-  </div>
-</div>
+<%= render '/shared/pages', items: @trustees %>
 
 <% if !@trustees.blank? %>
 <table class="table table--striped">
@@ -52,12 +47,7 @@
 <%= button_to 'New Trustee', new_trustee_path, method: :get, class: 'btn btn-success' %>
 <% end %>
 
-<div class="center-block">
-  <div class="pagination">
-    <%= page_entries_info @trustees %><br>
-    <%= paginate @trustees, :theme => 'twitter-bootstrap-3' %>
-  </div>
-</div>
+<%= render '/shared/pages', items: @trustees %>
 
 <div class="center-block">
 <%= link_to "View All Records", mudd_dbs_path + trustees_path, class: "btn btn-default" %>
