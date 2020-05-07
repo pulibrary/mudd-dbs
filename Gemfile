@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.2.3'
 
 # Use mysql as the database for Active Record
-gem 'mysql2'
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails'
@@ -69,5 +69,6 @@ gem 'pul-assets', :git => 'git@github.com:pulibrary/pul_assets.git', :branch => 
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
+  gem "rspec-rails"
 end
 

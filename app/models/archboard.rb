@@ -33,7 +33,7 @@ class Archboard < ActiveRecord::Base
 					#sanitize inputs to prevent sql injection
 					v.gsub!(/[";'']/, '"' => '', ';' => '', '\'' => '\\\'')
 	  			cols.each do |x|
-	  				q << "#{x} LIKE '%#{v}%'"
+	  				q << "#{x} ILIKE '%#{v}%'"
 	  			end
 	  			w[k] = "(" + q.join(" OR ") + ")"
 	  			q = []

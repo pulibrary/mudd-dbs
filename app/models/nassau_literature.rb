@@ -8,7 +8,7 @@ class NassauLiterature < ActiveRecord::Base
       if cols.include? k.downcase
         #sanitize inputs to prevent sql injection
 				v.gsub!(/[";'']/, '"' => '', ';' => '', '\'' => '\\\'')
-        q << "#{k} LIKE '%#{v}%'"
+        q << "#{k} ILIKE '%#{v}%'"
       end
     end
 

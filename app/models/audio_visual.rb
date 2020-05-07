@@ -24,7 +24,7 @@ class AudioVisual < ActiveRecord::Base
 				v.gsub!(/[";'']/, '"' => '', ';' => '', '\'' => '\\\'')
 	  			
 	  			cols.each do |x|
-	  				q << "#{x} LIKE '%#{v}%'"
+	  				q << "#{x} ILIKE '%#{v}%'"
 	  			end
 	  			
 	  			w[k] = "(" + q.join(" OR ") + ")"
@@ -47,19 +47,19 @@ class AudioVisual < ActiveRecord::Base
     if !params[:topic].blank?
       v = params[:topic]
       v.gsub!(/[";'']/, '"' => '', ';' => '', '\'' => '\\\'')
-      q4 = " AND topic LIKE '%#{v}%'"
+      q4 = " AND topic ILIKE '%#{v}%'"
     end
 
     if !params[:format].blank?
       v = params[:format]
       v.gsub!(/[";'']/, '"' => '', ';' => '', '\'' => '\\\'')
-      q5 = " AND format LIKE '%#{v}%'"
+      q5 = " AND format ILIKE '%#{v}%'"
     end
 
     if !params[:year].blank?
       v = params[:year]
       v.gsub!(/[";'']/, '"' => '', ';' => '', '\'' => '\\\'')
-      q6 = " AND year LIKE '%#{v}%'"
+      q6 = " AND year ILIKE '%#{v}%'"
     end
 
 	  query = w["keyword1"] + q2 + q3 + q4 + q5 + q6
