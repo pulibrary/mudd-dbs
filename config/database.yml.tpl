@@ -1,39 +1,24 @@
-# MySQL.  Versions 4.1 and 5.0 are recommended.
-#
-# Install the MYSQL driver
-#   gem install mysql2
-#
-# Ensure the MySQL gem is defined in your Gemfile
-#   gem 'mysql2'
-#
-# And be sure to use new-style password hashing:
-#   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS", 5) %>
+  timeout: 5000
+
 development:
-  adapter: mysql2
-  encoding: utf8
-  database: alumni_development
-  pool: 5
-  username: #dev_username
-  password: #dev_password
-  socket: /tmp/mysql.sock
+  <<: *default
+  database: mudd_dev
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  adapter: mysql2
-  encoding: utf8
-  database: alumni_test
-  pool: 5
-  username: #test_username
-  password: #test_username
-  socket: /tmp/mysql.sock
+  <<: *default
+  database: mudd_test
 
-production:
-  adapter: mysql2
-  encoding: utf8
-  database: alumni_production
-  pool: 5
-  username: #prod_username
-  password: #prod_password
-  socket: /tmp/mysql.sock
+production: &production
+  <<: *default
+  database: <%= ENV["MUDD_DB"] %>
+  host: <%= ENV.fetch("MUDD_DB_HOST", "host") %>
+  username: <%= ENV["MUDD_DB_USERNAME"] %>
+  password: <%= ENV["MUDD_DB_PASSWORD"] %>
+  port: <%= ENV['MUDD_DB_PORT'] || 3306 %>

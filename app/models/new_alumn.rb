@@ -1,3 +1,4 @@
+# depricated???
 class NewAlumn < ActiveRecord::Base
 	#represents Alumni from 1921 to last load
 	include Globals
@@ -10,7 +11,7 @@ class NewAlumn < ActiveRecord::Base
 	  	if cols.include? k.downcase
 				#sanitize inputs to prevent sql injection
 				v.gsub!(/[";'']/, '"' => '', ';' => '', '\'' => '\\\'')
-	  		q << "#{k} LIKE '%#{v}%'"
+	  		q << "#{k} ILIKE '%#{v}%'"
 	  	end
 	  end
 

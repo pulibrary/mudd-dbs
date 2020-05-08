@@ -1,0 +1,130 @@
+---
+version: 2.1
+executors:
+  mudd-executor:
+    docker:
+      - image: circleci/ruby:2.6.5-node-browsers
+        environment:
+          BUNDLER_VERSION: 2.0.1
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          BUNDLE_PATH: vendor/bundle
+          PGHOST: 127.0.0.1
+          PGUSER: mudd
+          RAILS_ENV: test
+      - image: postgres:10
+        environment:
+          POSTGRES_USER: mudd
+          POSTGRES_DB: mudd_test
+          POSTGRES_HOST_AUTH_METHOD: trust
+    working_directory: ~/project
+
+commands:
+  setup-bundler:
+    description: "Install correct version of bundler and load from cache or bundle install"
+    steps:
+      - run:
+          name: Configure Bundler
+          command: |
+            echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
+            source $BASH_ENV
+            gem install bundler
+
+      # Which version of bundler?
+      - run:
+          name: Which bundler?
+          command: bundle -v
+
+      # Restore bundle cache
+      - restore_cache:
+          keys:
+            - mudd-bundle-v3-{{ checksum "Gemfile.lock" }}
+            - mudd-bundle-v3-
+
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+
+      # Store bundle cache
+      - save_cache:
+          key: mudd-bundle-v3-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+jobs:
+  build:
+    executor: mudd-executor
+    steps:
+      - attach_workspace:
+          at: '~/project'
+      - checkout
+      - setup-bundler
+
+      # Only necessary if app uses webpacker or yarn in some other way
+      - restore_cache:
+          keys:
+            - mudd-yarn-v1-{{ checksum "yarn.lock" }}
+            - mudd-yarn-v1-
+
+      - run:
+          name: Yarn Install
+          command: yarn install --cache-folder ~/.cache/yarn
+
+      # Store yarn / webpacker cache
+      - save_cache:
+          key: mudd-yarn-v1-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+
+      - persist_to_workspace:
+          root: '~/project'
+          paths: '*'
+
+  test:
+    executor: mudd-executor
+    steps:
+      - attach_workspace:
+          at: '~/project'
+      - setup-bundler
+
+      # ensure we have psql which we need for db:schema:load
+      - run: sudo apt-get update
+      - run: sudo apt-get install -y postgresql-client || true
+
+      - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+
+      - run:
+          name: Database template
+          command: |
+            cp config/database.yml.tpl config/database.yml
+
+      - run:
+          name: Database setup
+          command: |
+            bin/rails db:create
+            bin/rails db:migrate
+
+      # Run rspec
+      - run:
+          name: Run rspec
+          command: |
+            bundle exec rspec
+
+
+      # Save test results for timing analysis
+      - store_test_results:
+          path: test_results
+
+      - persist_to_workspace:
+          root: '~/project'
+          paths: '*'
+
+workflows:
+  build_accept:
+    jobs:
+      - build
+      - test:
+         requires:
+          - build

@@ -30,7 +30,7 @@ class Photo < ActiveRecord::Base
           #sanitize inputs to prevent sql injection
   				v.gsub!(/[";'']/, '"' => '', ';' => '', '\'' => '\\\'')
           cols.each do |x|
-            q << "#{x} LIKE '%#{v}%'"
+            q << "#{x} ILIKE '%#{v}%'"
           end
           w[k] = "(" + q.join(" OR ") + ")"
           q = []
@@ -52,19 +52,19 @@ class Photo < ActiveRecord::Base
     if !params[:division].blank?
       v = params[:division]
       v.gsub!(/[";'']/, '"' => '', ';' => '', '\'' => '\\\'')
-      q4 = " AND division LIKE '%#{v}%'"
+      q4 = " AND division ILIKE '%#{v}%'"
     end
 
     if !params[:photographer].blank?
       v = params[:photographer]
       v.gsub!(/[";'']/, '"' => '', ';' => '', '\'' => '\\\'')
-      q5 = " AND photographer LIKE '%#{v}%'"
+      q5 = " AND photographer ILIKE '%#{v}%'"
     end
 
     if !params[:image_type].blank?
       v = params[:image_type]
       v.gsub!(/[";'']/, '"' => '', ';' => '', '\'' => '\\\'')
-      q6 = " AND image_type LIKE '%#{v}%'"
+      q6 = " AND image_type ILIKE '%#{v}%'"
     end
 
     query = w["subject1"] + q2 + q3 + q4 + q5 + q6
