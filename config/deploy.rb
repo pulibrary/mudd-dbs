@@ -2,9 +2,9 @@
 
 set :application, 'mudd'
 set :repo_url, 'git@github.com:pulibrary/mudd-dbs.git'
-set :branch, 'master'
+set :branch, 'main'
 
-# Default branch is :master
+# Default branch is :main
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app_name
