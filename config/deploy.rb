@@ -5,7 +5,7 @@ set :repo_url, 'https://github.com/pulibrary/mudd-dbs.git'
 set :branch, 'main'
 
 # Default branch is :main
-ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+set :branch, ENV["BRANCH"] || "main"
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/opt/mudd-dbs'
@@ -46,5 +46,17 @@ namespace :deploy do
 	  #end
     end
   end
+
+  desc "Place assets at the top level so that they can be access by the server as well as the proxied server" 
+  task :local_assets do
+    on roles(:web) do
+      within release_path do
+        execute "pwd"
+        execute :rake, "assets:precompile ASSET_PREFIX=/assets"
+      end
+    end
+  end
+
+  after "deploy:assets:precompile", "deploy:local_assets"
 
 end
