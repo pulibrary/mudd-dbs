@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 
 set :application, 'mudd'
-set :repo_url, 'git@github.com:pulibrary/mudd-dbs.git'
+set :repo_url, 'https://github.com/pulibrary/mudd-dbs.git'
 set :branch, 'main'
 
 # Default branch is :main
