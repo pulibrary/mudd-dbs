@@ -3,7 +3,7 @@ version: 2.1
 executors:
   mudd-executor:
     docker:
-      - image: circleci/ruby:2.6.5-node-browsers
+      - image: cimg/ruby:2.7-browsers
         environment:
           BUNDLER_VERSION: 2.0.1
           BUNDLE_JOBS: 3
@@ -38,8 +38,8 @@ commands:
       # Restore bundle cache
       - restore_cache:
           keys:
-            - mudd-bundle-v3-{{ checksum "Gemfile.lock" }}
-            - mudd-bundle-v3-
+            - mudd-bundle-v4-{{ checksum "Gemfile.lock" }}
+            - mudd-bundle-v4-
 
       - run:
           name: Bundle Install
@@ -47,7 +47,7 @@ commands:
 
       # Store bundle cache
       - save_cache:
-          key: mudd-bundle-v3-{{ checksum "Gemfile.lock" }}
+          key: mudd-bundle-v4-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
 
@@ -63,8 +63,8 @@ jobs:
       # Only necessary if app uses webpacker or yarn in some other way
       - restore_cache:
           keys:
-            - mudd-yarn-v1-{{ checksum "yarn.lock" }}
-            - mudd-yarn-v1-
+            - mudd-yarn-v2-{{ checksum "yarn.lock" }}
+            - mudd-yarn-v2-
 
       - run:
           name: Yarn Install
@@ -72,7 +72,7 @@ jobs:
 
       # Store yarn / webpacker cache
       - save_cache:
-          key: mudd-yarn-v1-{{ checksum "yarn.lock" }}
+          key: mudd-yarn-v2-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
 
