@@ -1,0 +1,5 @@
+name: mudd
+services:
+  mudd_database:
+    type: postgres:13
+    portforward: true
