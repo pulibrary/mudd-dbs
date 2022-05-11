@@ -6,9 +6,9 @@ Mudd Databases App upgrade/migration to Rails
 
  ```
  bundle install
- rails db:create
- rails db:migrate
- rails db:seed
+ cp config/database.yml.tpl config/database.yml
+ bundle exec rake servers:start
+ bundle exec rails s
  ```
 
 ## Syncing Database between servers
