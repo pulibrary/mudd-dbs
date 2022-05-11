@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.3'
+gem 'rails', '~> 6.0.5'
 
 # Use mysql as the database for Active Record
 gem 'pg'
@@ -16,7 +16,7 @@ gem 'uglifier'
 gem 'coffee-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
+# gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -36,7 +36,7 @@ gem "twitter-bootstrap-rails"
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem "nokogiri"
-gem "rdoc"
+gem "rdoc", "~> 6.3.3"
 gem "activerecord-import"
 
 group :doc do

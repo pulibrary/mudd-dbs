@@ -5,7 +5,6 @@ class CreateFaculties < ActiveRecord::Migration[5.2]
       t.string :lname
       t.string :fname
       t.string :birth
-      t.string :birth
       t.string :year
       t.string :death
       t.string :leave
