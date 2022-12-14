@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.5'
+gem 'rails', '~> 7.0'
 
 # Use mysql as the database for Active Record
 gem 'pg'
@@ -9,8 +9,7 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier'
+gem 'terser'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails'
@@ -73,3 +72,5 @@ group :development, :test do
   gem "rspec-rails"
 end
 
+
+gem "webrick", "~> 1.7"
