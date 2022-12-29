@@ -175,7 +175,7 @@ GEM
     marcel (1.0.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
-    mini_portile2 (2.8.0)
+    mini_portile2 (2.8.1)
     minitest (5.16.3)
     modernizr-rails (2.7.1)
     net-imap (0.3.2)
@@ -191,13 +191,13 @@ GEM
       net-protocol
     net-ssh (6.1.0)
     nio4r (2.5.8)
-    nokogiri (1.13.10)
+    nokogiri (1.14.0.rc1)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     normalize-rails (3.0.3)
     orm_adapter (0.5.0)
     pg (1.3.5)
-    racc (1.6.1)
+    racc (1.6.2)
     rack (2.2.4)
     rack-test (2.0.2)
       rack (>= 1.3)
@@ -316,7 +316,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   kaminari
-  nokogiri
+  nokogiri (~> 1.14.0.rc1)
   pg
   pul-assets!
   rails (~> 7.0)
@@ -331,4 +331,4 @@ DEPENDENCIES
   webrick (~> 1.7)
 
 BUNDLED WITH
-   2.2.27
+   2.4.1
