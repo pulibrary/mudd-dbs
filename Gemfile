@@ -48,6 +48,8 @@ gem 'devise'
 # avoid utf8 issues with csv imports
 #gem 'rack-utf8_sanitizer'
 
+gem 'net-ssh', '7.0.0.beta1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

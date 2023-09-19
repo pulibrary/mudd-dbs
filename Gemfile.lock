@@ -189,9 +189,9 @@ GEM
       net-ssh (>= 2.6.5, < 7.0.0)
     net-smtp (0.3.3)
       net-protocol
-    net-ssh (6.1.0)
-    nio4r (2.5.9)
-    nokogiri (1.14.3)
+    net-ssh (7.0.0.beta1)
+    nio4r (2.5.8)
+    nokogiri (1.13.10)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     normalize-rails (3.0.3)
@@ -316,6 +316,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   kaminari
+  net-ssh (= 7.0.0.beta1)
   nokogiri
   pg
   pul-assets!

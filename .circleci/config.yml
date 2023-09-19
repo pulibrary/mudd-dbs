@@ -13,7 +13,7 @@ jobs:
           PGHOST: 127.0.0.1
           PGUSER: mudd
           RAILS_ENV: test
-      - image: postgres:13
+      - image: postgres:15
         environment:
           POSTGRES_USER: mudd
           POSTGRES_DB: mudd_test
