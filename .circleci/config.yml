@@ -22,9 +22,7 @@ jobs:
       - checkout
       - ruby/install-deps
 
-      # ensure we have psql which we need for db:schema:load
-      - run: sudo apt-get --allow-releaseinfo-change update
-      - run: sudo apt-get install -y postgresql-client || true
+      - run: sudo apt install postgresql-client
 
       - run:
           name: Wait for DB
