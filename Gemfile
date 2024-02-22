@@ -37,6 +37,9 @@ gem "nokogiri"
 gem "rdoc", "~> 6.3.3"
 gem "activerecord-import"
 
+gem 'ed25519'
+gem 'bcrypt_pbkdf'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
