@@ -34,7 +34,7 @@ gem "twitter-bootstrap-rails"
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem "nokogiri"
-gem "rdoc", "~> 6.3.3"
+gem "rdoc", "~> 6.3.4"
 gem "activerecord-import"
 
 gem 'ed25519'
