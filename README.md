@@ -1,6 +1,6 @@
 # mudd-dbs
 
-Mudd Databases App upgrade/migration to Rails
+Mudd Databases App upgrade/migration to Rails.  We no longer use this application, please see [Static Tables instead](https://github.com/pulibrary/static-tables).
 
 ## Setting up your local machine for development purposes
 
